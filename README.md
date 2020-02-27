@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
 
 _s
@@ -45,3 +46,7 @@ Then, update the stylesheet header in `style.css`, the links in `footer.php` wit
 Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
 
 Good luck!
+=======
+# wp-alma
+Theme development for alma
+>>>>>>> 1342f45cb6a44a8a53030cdc5ad72f00e8efc92e

@@ -120,6 +120,8 @@ add_action( 'widgets_init', 'alma_wp_widgets_init' );
  * Enqueue scripts and styles.
  */
 function alma_wp_scripts() {
+	wp_enqueue_style( 'add_google_fonts', 'https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,600&display=swap', false );
+
 	wp_enqueue_style( 'alma-wp-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'alma-wp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );

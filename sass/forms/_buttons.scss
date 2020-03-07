@@ -20,3 +20,16 @@ input[type="submit"] {
 		border-color: $color__border-button-focus;
 	}
 }
+
+.primary-button > a{
+	background-color: $color__primary-700;
+	color: white;
+	font-family: Fira Sans;
+	font-weight: 600;
+	@include font-size(1.5);
+	line-height: 1.5;
+	padding: 12px 36px;
+	&:hover{
+		background-color: $color__primary-900;
+	}
+}

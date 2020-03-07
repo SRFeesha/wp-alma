@@ -27,3 +27,7 @@
 @mixin column-width($numberColumns: 3) {
 	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
+
+@mixin margin-top($number: 1) {
+	margin-top: map-get($spacing, $number);
+}

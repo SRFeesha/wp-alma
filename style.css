@@ -710,11 +710,15 @@ a:hover, a:active {
 ## Menus
 --------------------------------------------------------------*/
 #masthead {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[12];
       grid-template-columns: repeat(12, 1fr);
   max-height: 80px;
+  background-color: white;
 }
 
 #masthead .site-branding {
@@ -990,12 +994,19 @@ a:hover, a:active {
   -ms-grid-column: 3;
       grid-column-start: 3;
   grid-column-end: 13;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 1.33;
+  color: #003E6B;
 }
 
 #headline div h3 {
   -ms-grid-column: 3;
       grid-column-start: 3;
-  grid-column-end: 9;
+  grid-column-end: 13;
+  line-height: 1.5;
+  font-weight: 400;
+  margin-top: 0;
 }
 
 #headline div .primary-button {

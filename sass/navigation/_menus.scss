@@ -1,25 +1,23 @@
 // HEADER
 #masthead {
+	position: sticky;
+	top: 0;
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	max-height: 80px;
-
-	.site-branding{
+	background-color: white;
+	.site-branding {
 		grid-column-start: 1;
 		grid-column-end: 3;
 	}
-
 	.menu-header-default-container	{
 		height: 100%;
-
-		ul{
+		ul {
 			display: flex;
 			align-items: center;
 			height: 100%;
-		
 			li {
 				margin-left: map-get($spacing, 6);
-			
 				&:first-child{
 					margin-left: 100px;
 				}

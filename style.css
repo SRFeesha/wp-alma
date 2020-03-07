@@ -687,15 +687,15 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue;
+  color: #0F609B;
 }
 
 a:visited {
-  color: purple;
+  color: #4098D7;
 }
 
 a:hover, a:focus, a:active {
-  color: midnightblue;
+  color: #003E6B;
 }
 
 a:focus {
@@ -709,6 +709,46 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+#masthead {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  max-height: 80px;
+}
+
+#masthead .site-branding {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+#masthead .menu-header-default-container {
+  height: 100%;
+}
+
+#masthead .menu-header-default-container ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+#masthead .menu-header-default-container ul li {
+  margin-left: 48px;
+}
+
+#masthead .menu-header-default-container ul li:first-child {
+  margin-left: 100px;
+}
+
+#masthead .menu-header-default-container ul li:last-child {
+  margin-left: auto;
+}
+
 .main-navigation {
   clear: both;
   display: block;
@@ -1081,7 +1121,6 @@ a:hover, a:active {
   width: 100%;
   padding: 1rem;
   margin: auto;
-  border: solid 1px green;
 }
 
 .updated:not(.published) {

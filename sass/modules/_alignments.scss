@@ -14,3 +14,52 @@
 	clear: both;
 	@include center-block;
 }
+
+
+.third {
+	grid-column-start: span 3;
+}
+
+// .col-12{
+// 	grid-column-start: span 12;
+// }
+
+
+.grid > div {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-gap: 1rem;
+	& > * {
+		margin: 0;
+	}
+}
+
+.grid-2-row > div {
+	grid-gap: 1.5rem 1rem;
+}
+
+// so we don't have to write col-x twelve time
+@for $i from 1 through 12 {
+	.col-#{$i} {
+		grid-column: span $i;
+	}
+}
+
+#come-lavoriamo{
+	div{
+		height: min-content;
+	}
+}
+
+#headline {
+	div{
+		h1{
+			grid-column-start: 3;
+			grid-column-end: 13;
+		}
+		h3{
+			grid-column-start: 3;
+			grid-column-end: 9;
+		}
+	}
+}

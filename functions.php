@@ -161,3 +161,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Register Alma Footer(s)
+ */
+function register_footer_menus() {
+	register_nav_menus(
+		array(
+		'footer-left' => __( 'Footer Left' ),
+		'footer-center' => __( 'Footer Center' ),
+		'footer-right' => __( 'Footer Right' ),
+		'footer-down' => __( 'Footer Down' )
+		)
+	);
+}
+add_action( 'init', 'register_footer_menus' );

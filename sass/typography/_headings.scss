@@ -32,25 +32,3 @@ h4{
 	text-transform: uppercase;
 	color: $color__neutral-500;
 }
-
-p{
-	@include font-size(1);
-	line-height: 1.5;
-	letter-spacing: 0.01em;
-	color: $color__neutral-900;
-
-	&.bigger{
-		@include font-size(1.5);
-	}
-
-	&.big {
-		@include font-size(1.25);
-	}
-
-	&.caption{
-		@include font-size(0.875);
-		line-height: 1.43;
-		letter-spacing: 0.01em;
-		color: $color__neutral-600;
-	}
-}

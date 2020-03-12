@@ -6,23 +6,33 @@
 	grid-template-columns: repeat(12, 1fr);
 	max-height: 80px;
 	background-color: white;
+
 	.site-branding {
 		grid-column-start: 1;
 		grid-column-end: 3;
 	}
-	.menu-header-default-container	{
+
+	.menu-header-container	{
 		height: 100%;
+		
 		ul {
 			display: flex;
 			align-items: center;
 			height: 100%;
+
 			li {
 				margin-left: map-get($spacing, 6);
+				
 				&:first-child{
 					margin-left: 100px;
 				}
+
 				&:last-child{
 					margin-left: auto;;
+				}
+
+				a:visited {
+					color: $color__primary-700;
 				}
 			}
 		}
@@ -64,14 +74,6 @@
 			a {
 				width: 200px;
 			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
 		}
 
 		li:hover > ul,
@@ -83,21 +85,11 @@
 	li {
 		float: left;
 		position: relative;
-
-		&:hover > a,
-		&.focus > a {
-		}
 	}
 
 	a {
 		display: block;
 		text-decoration: none;
-	}
-
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
 	}
 }
 

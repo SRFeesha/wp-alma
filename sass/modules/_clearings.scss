@@ -7,9 +7,10 @@
 .site-header:before,
 .site-header:after,
 .site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
+.site-content:after
+// .site-footer:before,
+// .site-footer:after 
+{
 	@include clearfix;
 }
 

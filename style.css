@@ -437,32 +437,6 @@ h4 {
 }
 
 p {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.5;
-  letter-spacing: 0.01em;
-  color: #102A43;
-}
-
-p.bigger {
-  font-size: 24px;
-  font-size: 1.5rem;
-}
-
-p.big {
-  font-size: 20px;
-  font-size: 1.25rem;
-}
-
-p.caption {
-  font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 1.43;
-  letter-spacing: 0.01em;
-  color: #486581;
-}
-
-p {
   margin-bottom: 1.5em;
 }
 
@@ -508,6 +482,32 @@ mark, ins {
 
 big {
   font-size: 125%;
+}
+
+p {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: #102A43;
+}
+
+.bigger {
+  font-size: 24px;
+  font-size: 1.5rem;
+}
+
+.big {
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+
+.caption {
+  font-size: 14px;
+  font-size: 0.875rem;
+  letter-spacing: 0.01em;
+  line-height: 1.43;
+  color: #486581;
 }
 
 /*--------------------------------------------------------------
@@ -727,11 +727,11 @@ a:hover, a:active {
   grid-column-end: 3;
 }
 
-#masthead .menu-header-default-container {
+#masthead .menu-header-container {
   height: 100%;
 }
 
-#masthead .menu-header-default-container ul {
+#masthead .menu-header-container ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -741,16 +741,20 @@ a:hover, a:active {
   height: 100%;
 }
 
-#masthead .menu-header-default-container ul li {
+#masthead .menu-header-container ul li {
   margin-left: 48px;
 }
 
-#masthead .menu-header-default-container ul li:first-child {
+#masthead .menu-header-container ul li:first-child {
   margin-left: 100px;
 }
 
-#masthead .menu-header-default-container ul li:last-child {
+#masthead .menu-header-container ul li:last-child {
   margin-left: auto;
+}
+
+#masthead .menu-header-container ul li a:visited {
+  color: #0F609B;
 }
 
 .main-navigation {
@@ -844,6 +848,47 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+.site-footer {
+  justify-items: left;
+  border-top: solid 2px #F0F4F8;
+  margin-top: 128px;
+}
+
+.site-footer ul {
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer ul li {
+  margin-top: 8px;
+}
+
+.site-footer a,
+.site-footer a:visited {
+  text-decoration: none;
+  color: #334E68;
+}
+
+.site-footer .footer-title {
+  margin-top: 96px;
+  margin-bottom: 0;
+  color: #334E68;
+}
+
+.site-footer .footer-down {
+  margin-top: 96px;
+  margin-bottom: 24px;
+}
+
+.site-footer .footer-down a {
+  color: #627D98;
+}
+
+/*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
@@ -894,18 +939,6 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
-.alignleft {
-  display: inline;
-  float: left;
-  margin-right: 1.5em;
-}
-
-.alignright {
-  display: inline;
-  float: right;
-  margin-left: 1.5em;
-}
-
 .aligncenter {
   clear: both;
   display: block;
@@ -913,12 +946,8 @@ a:hover, a:active {
   margin-right: auto;
 }
 
-.third {
-  -ms-grid-column: span 3;
-      grid-column-start: span 3;
-}
-
-.grid > div {
+.grid,
+.grid-son > div {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[12];
@@ -926,7 +955,8 @@ a:hover, a:active {
   grid-gap: 1rem;
 }
 
-.grid > div > * {
+.grid > *,
+.grid-son > div > * {
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 0;
@@ -936,52 +966,130 @@ a:hover, a:active {
   grid-gap: 1.5rem 1rem;
 }
 
+.width-100 {
+  width: 100%;
+}
+
+.grid-space-between-items {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.grid-max-content {
+  -ms-grid-columns: (max-content)[4];
+      grid-template-columns: repeat(4, -webkit-max-content);
+      grid-template-columns: repeat(4, max-content);
+}
+
 .col-1 {
-  grid-column: span 1;
+  -ms-grid-column-span: 1;
+      grid-column-end: span 1;
 }
 
 .col-2 {
-  grid-column: span 2;
+  -ms-grid-column-span: 2;
+      grid-column-end: span 2;
 }
 
 .col-3 {
-  grid-column: span 3;
+  -ms-grid-column-span: 3;
+      grid-column-end: span 3;
 }
 
 .col-4 {
-  grid-column: span 4;
+  -ms-grid-column-span: 4;
+      grid-column-end: span 4;
 }
 
 .col-5 {
-  grid-column: span 5;
+  -ms-grid-column-span: 5;
+      grid-column-end: span 5;
 }
 
 .col-6 {
-  grid-column: span 6;
+  -ms-grid-column-span: 6;
+      grid-column-end: span 6;
 }
 
 .col-7 {
-  grid-column: span 7;
+  -ms-grid-column-span: 7;
+      grid-column-end: span 7;
 }
 
 .col-8 {
-  grid-column: span 8;
+  -ms-grid-column-span: 8;
+      grid-column-end: span 8;
 }
 
 .col-9 {
-  grid-column: span 9;
+  -ms-grid-column-span: 9;
+      grid-column-end: span 9;
 }
 
 .col-10 {
-  grid-column: span 10;
+  -ms-grid-column-span: 10;
+      grid-column-end: span 10;
 }
 
 .col-11 {
-  grid-column: span 11;
+  -ms-grid-column-span: 11;
+      grid-column-end: span 11;
 }
 
 .col-12 {
-  grid-column: span 12;
+  -ms-grid-column-span: 12;
+      grid-column-end: span 12;
+}
+
+.start-col-2 {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+}
+
+.start-col-3 {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+}
+
+.start-col-4 {
+  -ms-grid-column: 4;
+      grid-column-start: 4;
+}
+
+.start-col-5 {
+  -ms-grid-column: 5;
+      grid-column-start: 5;
+}
+
+.start-col-6 {
+  -ms-grid-column: 6;
+      grid-column-start: 6;
+}
+
+.start-col-7 {
+  -ms-grid-column: 7;
+      grid-column-start: 7;
+}
+
+.start-col-8 {
+  -ms-grid-column: 8;
+      grid-column-start: 8;
+}
+
+.start-col-9 {
+  -ms-grid-column: 9;
+      grid-column-start: 9;
+}
+
+.start-col-10 {
+  -ms-grid-column: 10;
+      grid-column-start: 10;
+}
+
+.start-col-11 {
+  -ms-grid-column: 11;
+      grid-column-start: 11;
 }
 
 #come-lavoriamo div {
@@ -1087,9 +1195,7 @@ a:hover, a:active {
 .site-header:before,
 .site-header:after,
 .site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
+.site-content:after {
   content: "";
   display: table;
   table-layout: fixed;

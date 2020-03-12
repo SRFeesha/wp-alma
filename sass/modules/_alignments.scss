@@ -1,14 +1,14 @@
-.alignleft {
-	display: inline;
-	float: left;
-	margin-right: 1.5em;
-}
+// .alignleft {
+// 	display: inline;
+// 	float: left;
+// 	margin-right: 1.5em;
+// }
 
-.alignright {
-	display: inline;
-	float: right;
-	margin-left: 1.5em;
-}
+// .alignright {
+// 	display: inline;
+// 	float: right;
+// 	margin-left: 1.5em;
+// }
 
 .aligncenter {
 	clear: both;
@@ -16,13 +16,8 @@
 }
 
 
-.third {
-	grid-column-start: span 3;
-}
-
-
-
-.grid > div {
+.grid, 
+.grid-son > div {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	grid-gap: 1rem;
@@ -37,10 +32,30 @@
 	grid-gap: 1.5rem 1rem;
 }
 
+.width-100{
+	width: 100%;
+}
+
+.grid-space-between-items{
+	justify-content: space-between;
+}
+
+.grid-max-content{
+	grid-template-columns: repeat(4, max-content);
+}
+
+
 // so we don't have to write col-x twelve time
 @for $i from 1 through 12 {
 	.col-#{$i} {
-		grid-column: span $i;
+		grid-column-end: span $i;
+	}
+}
+
+// so we don't have to write col-x twelve time
+@for $i from 2 through 11 {
+	.start-col-#{$i} {
+		grid-column-start: $i;
 	}
 }
 

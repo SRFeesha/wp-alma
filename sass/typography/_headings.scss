@@ -8,6 +8,7 @@ h1 {
 	line-height: 1;
 	font-weight: 800;
 	color: $color__neutral-900;
+	margin: 0;
 }
 
 h2 {
@@ -19,7 +20,7 @@ h2 {
 
 h3{
 	@include font-size(1.5);
-	line-height: 2em;
+	line-height: 2rem;
 	font-weight: 600;
 	color: $color__neutral-500;
 }

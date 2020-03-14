@@ -408,6 +408,7 @@ h1 {
   line-height: 1;
   font-weight: 800;
   color: #102A43;
+  margin: 0;
 }
 
 h2 {
@@ -421,7 +422,7 @@ h2 {
 h3 {
   font-size: 24px;
   font-size: 1.5rem;
-  line-height: 2em;
+  line-height: 2rem;
   font-weight: 600;
   color: #627D98;
 }
@@ -505,7 +506,7 @@ p {
 .caption {
   font-size: 14px;
   font-size: 0.875rem;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.04em;
   line-height: 1.43;
   color: #486581;
 }
@@ -902,6 +903,49 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
+## Cards
+--------------------------------------------------------------*/
+.card-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(13rem, 29rem))[2];
+      grid-template-columns: repeat(2, minmax(13rem, 29rem));
+  grid-gap: 6rem 7rem;
+}
+
+.card-link {
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+}
+
+.card {
+  border: solid 2px #F0F4F8;
+  border-radius: 4px;
+  max-width: 29rem;
+  max-height: 26.5rem;
+}
+
+.card-featured-img {
+  height: 18rem;
+  width: 29rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card-content {
+  padding: 1rem 2rem 1.5rem 1rem;
+}
+
+.card-content > * {
+  margin: 0;
+}
+
+.card-content .card-title {
+  color: #102A43;
+}
+
+/*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
@@ -981,6 +1025,10 @@ a:hover, a:active {
 
 .width-100 {
   width: 100%;
+}
+
+.width-50 {
+  width: 50%;
 }
 
 .full-width {

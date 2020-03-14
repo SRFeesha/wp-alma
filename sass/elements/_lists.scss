@@ -3,7 +3,11 @@ ul, ol {
 }
 
 ul {
-	list-style: disc;
+	list-style: square;
+
+	li:not(:first-child) {
+		margin-top: 1em;
+	}
 }
 
 ol {

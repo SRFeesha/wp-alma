@@ -175,3 +175,47 @@ function register_footer_menus() {
 	);
 }
 add_action( 'init', 'register_footer_menus' );
+
+
+/**
+ *  Custom Post Type Start 
+ * */
+function cw_post_type() {
+	register_post_type( 'case_study',
+		// WordPress CPT Options Start
+		array(
+			'labels' => array(
+				'name' => __('Portfolio'),
+				'singular_name' => __('Case study'),
+				'menu_name' => _x('Portfolio', 'admin menu'),
+				'name_admin_bar' => _x('Portfolio', 'admin bar'),
+				'add_new' => _x('Aggiungi case study', 'add new'),
+				'add_new_item' => __('Aggiungi nuovo Case Study'),
+				'new_item' => __('Nuovo case study'),
+				'edit_item' => __('Modifica case study'),
+				'view_item' => __('Vedi tutti i case studies'),
+				'all_items' => __('Tutti i case study'),
+				'search_items' => __('Cerca tra i case studies'),
+				'not_found' => __('Nessun case study trovat')
+			),
+			'has_archive' => true,
+			'public' => true,
+			'rewrite' => array('slug' => 'portfolio'),
+			'show_in_rest' => true,
+			'query_var' => true,
+			'hierarchical' => false,
+			'supports' => array(
+				'title', 
+				'editor', 
+				'author', 
+				'thumbnail', 
+				'excerpt', 
+				'custom-fields', 
+				'revisions', 
+				'post-formats'
+			)
+		)
+	);
+}
+     
+add_action( 'init', 'cw_post_type' );

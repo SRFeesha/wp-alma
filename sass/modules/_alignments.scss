@@ -25,6 +25,7 @@
 		margin-left: 0;
 		margin-right: 0;
 		margin-bottom: 0;
+		// margin:0;
 	}
 }
 
@@ -34,6 +35,11 @@
 
 .width-100{
 	width: 100%;
+}
+
+.full-width {
+	margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
 }
 
 .grid-space-between-items{
@@ -53,9 +59,16 @@
 }
 
 // so we don't have to write col-x twelve time
-@for $i from 2 through 11 {
+@for $i from 1 through 11 {
 	.start-col-#{$i} {
 		grid-column-start: $i;
+	}
+}
+
+// so we don't have to write col-x twelve time
+@for $i from 0 through 15 {
+	.margin-top-#{$i} {
+		@include margin-top($i);
 	}
 }
 
@@ -86,12 +99,5 @@
 			grid-column-start: 3;
 			grid-column-end: 13;
 		}
-	}
-}
-
-// so we don't have to write col-x twelve time
-@for $i from 1 through 15 {
-	.margin-top-#{$i} {
-		@include margin-top($i);
 	}
 }

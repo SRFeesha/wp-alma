@@ -493,17 +493,20 @@ p {
   color: #102A43;
 }
 
-.big {
+.big,
+.has-medium-font-size {
   font-size: 20px;
   font-size: 1.25rem;
 }
 
-.bigger {
+.bigger,
+.has-large-font-size {
   font-size: 24px;
   font-size: 1.5rem;
 }
 
-.caption {
+.caption,
+.has-small-font-size {
   font-size: 14px;
   font-size: 0.875rem;
   letter-spacing: 0.04em;
@@ -513,6 +516,14 @@ p {
 
 .gray-500 {
   color: #627D98;
+}
+
+.primary-900 {
+  color: #003E6B;
+}
+
+.brand-color {
+  color: #0F609B;
 }
 
 /*--------------------------------------------------------------
@@ -757,6 +768,7 @@ a:hover, a:active {
 
 #masthead .menu-header-container ul li {
   margin-left: 48px;
+  margin-top: 0;
 }
 
 #masthead .menu-header-container ul li:first-child {
@@ -1259,6 +1271,171 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
+# Gutenberg Color Palette
+--------------------------------------------------------------*/
+/* Color Options
+--------------------------------------------- */
+.has-primary-050-color {
+  color: #DCEEFB;
+}
+
+.has-primary-050-background-color {
+  background-color: #DCEEFB;
+}
+
+.has-primary-100-color {
+  color: #B6E0FE;
+}
+
+.has-primary-100-background-color {
+  background-color: #B6E0FE;
+}
+
+.has-primary-200-color {
+  color: #84C5F4;
+}
+
+.has-primary-200-background-color {
+  background-color: #84C5F4;
+}
+
+.has-primary-300-color {
+  color: #62B0E8;
+}
+
+.has-primary-300-background-color {
+  background-color: #62B0E8;
+}
+
+.has-primary-400-color {
+  color: #4098D7;
+}
+
+.has-primary-400-background-color {
+  background-color: #4098D7;
+}
+
+.has-primary-500-color {
+  color: #2680C2;
+}
+
+.has-primary-500-background-color {
+  background-color: #2680C2;
+}
+
+.has-primary-600-color {
+  color: #186FAF;
+}
+
+.has-primary-600-background-color {
+  background-color: #186FAF;
+}
+
+.has-primary-700-color {
+  color: #0F609B;
+}
+
+.has-primary-700-background-color {
+  background-color: #0F609B;
+}
+
+.has-primary-800-color {
+  color: #0A558C;
+}
+
+.has-primary-800-background-color {
+  background-color: #0A558C;
+}
+
+.has-primary-900-color {
+  color: #003E6B;
+}
+
+.has-primary-900-background-color {
+  background-color: #003E6B;
+}
+
+.has-gray-050-color {
+  color: #F0F4F8;
+}
+
+.has-gray-050-background-color {
+  background-color: #F0F4F8;
+}
+
+.has-gray-100-color {
+  color: #D9E2EC;
+}
+
+.has-gray-100-background-color {
+  background-color: #D9E2EC;
+}
+
+.has-gray-200-color {
+  color: #BCCCDC;
+}
+
+.has-gray-200-background-color {
+  background-color: #BCCCDC;
+}
+
+.has-gray-300-color {
+  color: #9FB3C8;
+}
+
+.has-gray-300-background-color {
+  background-color: #9FB3C8;
+}
+
+.has-gray-400-color {
+  color: #829AB1;
+}
+
+.has-gray-400-background-color {
+  background-color: #829AB1;
+}
+
+.has-gray-500-color {
+  color: #627D98;
+}
+
+.has-gray-500-background-color {
+  background-color: #627D98;
+}
+
+.has-gray-600-color {
+  color: #486581;
+}
+
+.has-gray-600-background-color {
+  background-color: #486581;
+}
+
+.has-gray-700-color {
+  color: #334E68;
+}
+
+.has-gray-700-background-color {
+  background-color: #334E68;
+}
+
+.has-gray-800-color {
+  color: #243B53;
+}
+
+.has-gray-800-background-color {
+  background-color: #243B53;
+}
+
+.has-gray-900-color {
+  color: #102A43;
+}
+
+.has-gray-900-background-color {
+  background-color: #102A43;
+}
+
+/*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
 .clear:before,
@@ -1309,7 +1486,8 @@ a:hover, a:active {
 
 .post,
 .page,
-.content-space {
+.content-space,
+.site {
   max-width: 1168px;
   width: 100%;
   margin: auto;
@@ -1339,6 +1517,15 @@ a:hover, a:active {
 
 .bypostauthor {
   display: block;
+}
+
+/*--------------------------------------------------------------
+## Portfolio
+--------------------------------------------------------------*/
+.single-case_study h2,
+.single-case_study h3,
+.single-case_study h4 {
+  color: #003E6B;
 }
 
 /*--------------------------------------------------------------

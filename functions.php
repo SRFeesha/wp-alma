@@ -219,3 +219,129 @@ function cw_post_type() {
 }
      
 add_action( 'init', 'cw_post_type' );
+
+
+/** 
+* Import GUTENBERG custom colors 
+*/
+function alma_color_palette_setup() {
+	// Disable Custom Colors
+	add_theme_support( 'disable-custom-colors' );
+  
+	// Editor Color Palette
+	add_theme_support( 'editor-color-palette', array(
+		array(
+			'name'  => __( 'Blue 050', 'alma_wp' ),
+			'slug'  => 'blue050',
+			'color'	=> '#DCEEFB',
+		),
+		array(
+			'name'  => __( 'Blue 100', 'alma_wp' ),
+			'slug'  => 'blue100',
+			'color'	=> '#B6E0FE',
+		),
+		array(
+			'name'  => __( 'Blue 200', 'alma_wp' ),
+			'slug'  => 'blue200',
+			'color'	=> '#84C5F4',
+		),
+		array(
+			'name'  => __( 'Blue 300', 'alma_wp' ),
+			'slug'  => 'blue300',
+			'color'	=> '#62B0E8',
+		),
+		array(
+			'name'  => __( 'Blue 400', 'alma_wp' ),
+			'slug'  => 'blue400',
+			'color'	=> '#4098D7',
+		),
+		array(
+			'name'  => __( 'Blue 500', 'alma_wp' ),
+			'slug'  => 'blue500',
+			'color'	=> '#2680C2',
+		),
+		array(
+			'name'  => __( 'Blue 600', 'alma_wp' ),
+			'slug'  => 'blue600',
+			'color'	=> '#186FAF',
+		),
+		array(
+			'name'  => __( 'Blue 700', 'alma_wp' ),
+			'slug'  => 'blue700',
+			'color'	=> '#0F609B',
+		),
+		array(
+			'name'  => __( 'Blue 800', 'alma_wp' ),
+			'slug'  => 'blue800',
+			'color'	=> '#0A558C',
+		),
+		array(
+			'name'  => __( 'Blue 900', 'alma_wp' ),
+			'slug'  => 'blue900',
+			'color'	=> '#003E6B',
+		),
+
+		array(
+			'name'  => __( 'Error', 'alma_wp' ),
+			'slug'  => 'error',
+			'color'	=> '#911111',
+		),
+		array(
+			'name'  => __( 'Warning', 'alma_wp' ),
+			'slug'  => 'warning',
+			'color'	=> '#CB6E17',
+		),
+
+		array(
+			'name'  => __( 'Gray 050', 'alma_wp' ),
+			'slug'  => 'gray050',
+			'color'	=> '#F0F4F8',
+		),
+		array(
+			'name'  => __( 'Gray 100', 'alma_wp' ),
+			'slug'  => 'gray100',
+			'color'	=> '#D9E2EC',
+		),
+		array(
+			'name'  => __( 'Gray 200', 'alma_wp' ),
+			'slug'  => 'gray200',
+			'color'	=> '#BCCCDC',
+		),
+		array(
+			'name'  => __( 'Gray 300', 'alma_wp' ),
+			'slug'  => 'gray300',
+			'color'	=> '#9FB3C8',
+		),
+		array(
+			'name'  => __( 'Gray 400', 'alma_wp' ),
+			'slug'  => 'gray400',
+			'color'	=> '#829AB1',
+		),
+		array(
+			'name'  => __( 'Gray 500', 'alma_wp' ),
+			'slug'  => 'gray500',
+			'color'	=> '#627D98',
+		),
+		array(
+			'name'  => __( 'Gray 600', 'alma_wp' ),
+			'slug'  => 'gray600',
+			'color'	=> '#486581',
+		),
+		array(
+			'name'  => __( 'Gray 700', 'alma_wp' ),
+			'slug'  => 'gray700',
+			'color'	=> '#334E68',
+		),
+		array(
+			'name'  => __( 'Gray 800', 'alma_wp' ),
+			'slug'  => 'gray800',
+			'color'	=> '#243B53',
+		),
+		array(
+			'name'  => __( 'Gray 900', 'alma_wp' ),
+			'slug'  => 'gray900',
+			'color'	=> '#102A43',
+		),
+	) );
+}
+add_action( 'after_setup_theme', 'alma_color_palette_setup' );

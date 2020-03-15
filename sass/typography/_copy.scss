@@ -51,16 +51,19 @@ p{
 	color: $color__neutral-900;
 }
 
-.big {
+.big,
+.has-medium-font-size {
 	@include font-size(1.25);
 }
 
-.bigger {
+.bigger,
+.has-large-font-size {
 	@include font-size(1.5);
 	// line-height: 1.5;
 }
 
-.caption {
+.caption,
+.has-small-font-size  {
 	@include font-size(0.875);
 	letter-spacing: 0.04em;
 	line-height: 1.43;

@@ -3,5 +3,101 @@
     h3,
     h4 {
         color: $color__primary-900;
+        // margin-bottom: 0;
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+        // margin-right: 0;
+        // margin-bottom: 0;
+        // margin-left: 0;
+    }
+
+    h3 + p {
+        margin-top: 0.75rem;
+    }
+
+    p + h3 {
+        margin-top: 2.75rem;
+    }
+
+
+    .wp-block-columns {
+        justify-content: space-between;
+    }
+
+    @for $i from 0 through 15 {
+        .margin-top-#{$i} {
+            @include margin-top($i);
+        }
+    }
+
+    // can't edit the columns sizing
+    #main h1 + .wp-block-columns > * {
+        &:first-child {
+            flex-basis: 58% !important;
+        }
+
+        &:last-child {
+            flex-basis: 27.25% !important;
+        }
+    }
+
+    blockquote.is-style-large {
+        margin-top: map-get($spacing , 10 );
+        background-color: $color__primary-050;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        
+        p, 
+        cite {
+            max-width: 775px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        p {
+            position: relative;
+            padding-top: map-get($spacing, 9);
+            color: $color__primary-900;
+            @include font-size(2.25);
+            line-height: 1.33;
+            font-style: italic;
+            letter-spacing: 0;
+            z-index: 1;
+        }
+
+        p:before {
+            content: '“';
+            position: absolute;
+            left: -50px;
+            top: 71px;
+            color: $color__primary-200;
+            font-size: 162px;
+            font-weight: 600;
+            font-style: italic;
+            z-index: -1;
+        }
+
+        cite {
+            padding: map-get($spacing, 3) 0 map-get($spacing, 9) 0;
+            text-align: left;
+            font-style: normal;
+            color: $color__primary-500;
+        }
+    }
+
+    .post-navigation {
+        @include margin-top(9);
+        margin-bottom: map-get($spacing, 7);
+        font-size: 24px;
+        a {
+
+            text-decoration: none;
+            color: $color__primary-700;
+        }
+
     }
 }

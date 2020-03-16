@@ -1,6 +1,6 @@
-p {
-	margin-bottom: 1.5em;
-}
+// p {
+// 	margin-bottom: 1.5em;
+// }
 
 dfn, cite, em, i {
 	font-style: italic;
@@ -52,12 +52,12 @@ p{
 }
 
 .big,
-.has-medium-font-size {
+.has-big-font-size {
 	@include font-size(1.25);
 }
 
 .bigger,
-.has-large-font-size {
+.has-bigger-font-size {
 	@include font-size(1.5);
 	// line-height: 1.5;
 }

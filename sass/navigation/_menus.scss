@@ -6,6 +6,7 @@
 	grid-template-columns: repeat(12, 1fr);
 	max-height: 80px;
 	background-color: white;
+	z-index: 99;
 
 	.site-branding {
 		grid-column-start: 1;

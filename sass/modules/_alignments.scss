@@ -33,14 +33,39 @@
 	grid-gap: 1.5rem 1rem;
 }
 
-.width-100{
+.width-100 {
 	width: 100%;
 }
 
-.width-50{
+.width-50 {
+	max-width: 50%;
 	width: 50%;
 }
 
+.width-37 {
+	width: 37%;
+	max-width: 37%;
+}
+
+.width-42 {
+	width: 42%;
+	max-width: 42%;
+}
+
+.width-66 {
+	width: 66%;
+	max-width: 66%;
+}
+
+.width-18 {
+	width: 18%;
+	max-width: 18%;
+}
+
+.width-88 {
+	width: 88%;
+	max-width: 88%;
+}
 
 .full-width {
 	margin-left: calc(50% - 50vw);

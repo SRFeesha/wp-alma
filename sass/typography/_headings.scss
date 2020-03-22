@@ -1,6 +1,7 @@
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	font-family: $font__main;
+	margin: 0;
 }
 
 h1 {
@@ -8,7 +9,6 @@ h1 {
 	line-height: 1;
 	font-weight: 800;
 	color: $color__neutral-900;
-	margin: 0;
 }
 
 h2 {

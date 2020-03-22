@@ -1,0 +1,30 @@
+.horizontal-slider {
+    width: 100vw;
+    overflow-x: scroll;
+    -ms-overflow-style: none;  /* Hide scrollbar in Internet Explorer 10+ */
+    scrollbar-width: none;  /* Hide scrollbar in Firefox */
+    cursor: -webkit-grab; 
+    cursor: grab;
+
+    &::-webkit-scrollbar {
+        display: none; /* Hide scrollbar in Safari and Chrome */
+    }
+
+    & > div{
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: min-content min-content;
+        grid-gap: 2em;
+        // padding: 32px;
+
+        & > div:first-child {
+            margin-left: calc( ((100vw - 1168px) / 2) - 32px ); //align first card with content
+        }
+
+        &:after {
+            content: "";
+            width: 32px;
+        }
+    }
+}
+

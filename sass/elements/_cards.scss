@@ -1,0 +1,89 @@
+.card-team-member {
+    width: 664px;
+    max-height: 422px;;
+    border: 2px solid $color__neutral-050;
+    border-radius: 4px;
+    padding-left: 32px;
+    background-color: white;
+
+    p {
+        padding-right: 16px;
+    }
+
+    & > div {
+        display: grid;
+        grid-template-columns: 4fr 3fr;
+    }
+
+    .image-team-member {
+        margin: 0;
+        line-height: 0; //being this a figure, there is some space underneath the image due to skipped row of text
+
+        img {
+            object-fit: cover;
+            border-radius: 50% 0 0 50%;
+        }
+    }
+}
+
+
+//Portfolio Card
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(13rem, 29rem));
+    grid-gap: 6rem 7rem;
+}
+
+.card-link {
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+}
+
+.card {
+    border: solid 2px $color__neutral-050;
+    border-radius: 4px;
+    max-width: 29rem;
+    max-height: 26.5rem;
+}
+
+.card-featured-img {
+    height: 18rem;
+    width: 29rem;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1rem 2rem 1.5rem 1rem;
+    
+    & > * {
+        margin: 0;
+    }
+
+    .card-title {
+        color: $color__neutral-900;
+    }
+}
+
+
+// certificate
+.card-certificate {
+    width: 384px;
+    height: 256px;;
+    border: 2px solid $color__neutral-050;
+    border-radius: 4px;
+    padding-left: map-get($spacing, 3);
+    background-color: white;
+
+    img {
+        width: 352px;
+        height: 156px;
+        object-fit: contain;
+        filter: grayscale(1);
+        transition: all 300ms;
+
+        &:hover {
+            filter: grayscale(0);
+        }
+    }
+}

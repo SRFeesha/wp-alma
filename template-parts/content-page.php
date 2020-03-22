@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title margin-top-7">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
 	<?php alma_wp_post_thumbnail(); ?>

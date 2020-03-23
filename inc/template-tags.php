@@ -19,18 +19,18 @@ if ( ! function_exists( 'alma_wp_posted_on' ) ) :
 
 		$time_string = sprintf( $time_string,
 			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date() ),
+			esc_html( get_the_date('d · m · Y') ),
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
-			esc_html( get_the_modified_date() )
+			esc_html( get_the_modified_date('d m Y') )
 		);
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'alma-wp' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			esc_html_x( '%s', 'post date', 'alma-wp' ),
+			$time_string
 		);
 
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+		echo '<span class="posted-on has-gray-500-color">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
 	}
 endif;
@@ -127,20 +127,18 @@ if ( ! function_exists( 'alma_wp_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
+				<?php //the_post_thumbnail(); ?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>
 
-		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-			<?php
-			the_post_thumbnail( 'post-thumbnail', array(
-				'alt' => the_title_attribute( array(
-					'echo' => false,
-				) ),
-			) );
-			?>
-		</a>
+		<?php
+		the_post_thumbnail( 'post-thumbnail', array(
+			'alt' => the_title_attribute( array(
+				'echo' => false,
+			) ),
+		) );
+		?>
 
 		<?php
 		endif; // End is_singular().

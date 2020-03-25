@@ -19,7 +19,7 @@ if ( ! function_exists( 'alma_wp_posted_on' ) ) :
 
 		$time_string = sprintf( $time_string,
 			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date('d · m · Y') ),
+			esc_html( get_the_date('d m Y') ),
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
 			esc_html( get_the_modified_date('d m Y') )
 		);
@@ -60,16 +60,22 @@ if ( ! function_exists( 'alma_wp_entry_footer' ) ) :
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'alma-wp' ) );
-			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'alma-wp' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-			}
-
-			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'alma-wp' ) );
-			if ( $tags_list ) {
-				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'alma-wp' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+
+			if ( $categories_list && $tags_list ) {
+				printf( '<div class="caption">' . esc_html__( 'Categoria: %1$s', 'alma-wp' ) . "<br />" . esc_html__( 'Tags: %2$s', 'alma-wp' ) . '</div>', $categories_list, $tags_list ); // WPCS: XSS OK.
+			}
+			else {
+				if ( $categories_list ) {
+					/* translators: 1: list of categories. */
+					printf( '<p class="cat-links caption">' . esc_html__( 'Categoria: %1$s', 'alma-wp' ) . '</p>', $categories_list ); // WPCS: XSS OK.
+				}
+
+				/* translators: used between list items, there is a space after the comma */
+				if ( $tags_list ) {
+					/* translators: 1: list of tags. */
+					printf( '<p class="tags-links caption">' . esc_html__( 'Tags: %1$s', 'alma-wp' ) . '</p>', $tags_list ); // WPCS: XSS OK.
+				}
 			}
 		}
 
@@ -127,7 +133,7 @@ if ( ! function_exists( 'alma_wp_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail">
-				<?php //the_post_thumbnail(); ?>
+				<?php the_post_thumbnail(); ?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>

@@ -16,21 +16,13 @@
 
 		<div class="entry-meta">
 			<?php
-				/* translators: used between list items, there is a space after the comma */
-				// $categories_list = get_the_category_list( esc_html__( ', ', 'alma-wp' ) );
-				$category = get_the_category()[0]->name;
-				// echo ($categories_list[0]->name);
-
-				if ( $category ) {
-					/* translators: 1: list of categories. */
-					printf( '<span class="cat-links has-gray-500-color">' . esc_html__( '%1$s', 'alma-wp' ) . " • " . '</span>', $category ); // WPCS: XSS OK.
-				}
 				alma_wp_posted_on();
+				alma_wp_get_post_category();
 			?>
 		</div><!-- .entry-meta -->
 		<?php 
 			the_title( '<h3 class="entry-title">', '</h3>');
 		?>
-</div>
+	</div>
 </a>
 

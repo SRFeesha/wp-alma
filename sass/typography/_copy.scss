@@ -44,10 +44,10 @@ big {
 	font-size: 125%;
 }
 
-p{
+p {
 	@include font-size(1);
 	line-height: 1.5;
-	letter-spacing: 0.01em;
+	// letter-spacing: 0.01em;
 	color: $color__neutral-900;
 	margin: 0;
 }

@@ -6,3 +6,43 @@
 		max-width: 100%;
 	}
 }
+
+// Blog Sidebar
+.widget-area {
+    grid-area: sidebar;
+
+    .sidebar-container {
+        position: sticky;
+        top: 7em;
+        padding: 2rem;
+        border-radius: 4px;
+        background-color: $color__neutral-050;
+    }
+
+    section {
+        h2 {
+            font-size: 14px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            line-height: 1.43;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: $color__neutral-500;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin-top: 4px;
+            }
+        }
+
+        .tagcloud a {
+            display: block;
+            margin-top: 4px;;
+        }
+    }
+}

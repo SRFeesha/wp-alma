@@ -55,7 +55,7 @@ get_header(); ?>
 				'prev_text' => __( 'Precedente', 'textdomain' ),
 				'next_text' => __( 'Successiva', 'textdomain' ),
 			) );
-			?>
+		?>
 	</div><!-- #primary -->
 
 	<?php get_sidebar(); ?>

@@ -10,9 +10,13 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	
+	<?php 
+	if (! is_front_page()) { //remove the title in the homepage ?> 
+		<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title margin-top-7">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+		</header><!-- .entry-header -->
+	<?php } ?>
 
 	<?php alma_wp_post_thumbnail(); ?>
 

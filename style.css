@@ -506,7 +506,7 @@ p {
 .has-small-font-size {
   font-size: 14px;
   font-size: 0.875rem;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.008em;
   line-height: 1.43;
   color: #486581;
 }
@@ -750,8 +750,19 @@ table {
 .card {
   border: solid 2px #F0F4F8;
   border-radius: 4px;
-  max-width: 29rem;
-  max-height: 26.5rem;
+  width: 29rem;
+  height: 26.5rem;
+  background-color: white;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.card:hover {
+  border-color: #0F609B;
+}
+
+.card:hover h2 {
+  color: #0F609B;
 }
 
 .card-featured-img {
@@ -759,7 +770,7 @@ table {
   width: 29rem;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 4px 4px 0 0;
+  border-radius: 2px 2px 0 0;
 }
 
 .card-content {

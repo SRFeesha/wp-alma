@@ -766,7 +766,7 @@ table {
 }
 
 .card-featured-img {
-  height: 18rem;
+  height: 16.5rem;
   width: 29rem;
   -o-object-fit: cover;
      object-fit: cover;
@@ -774,7 +774,7 @@ table {
 }
 
 .card-content {
-  padding: 1rem 2rem 1.5rem 1rem;
+  padding: 1rem 2rem 1.5rem 2rem;
 }
 
 .card-content > * {
@@ -842,6 +842,22 @@ table {
 .horizontal-slider > div:after {
   content: "";
   width: 32px;
+}
+
+.post-tags {
+  margin-top: 8px;
+  overflow: hidden;
+  max-height: 35px;
+}
+
+.tag-case-study {
+  display: inline-block;
+  margin-right: .5em;
+  margin-bottom: .5em;
+  padding: .25em 1em;
+  border: solid 1px #BCCCDC;
+  border-radius: 4px;
+  color: #334E68;
 }
 
 /*--------------------------------------------------------------
@@ -1183,17 +1199,20 @@ a[href*="//"]:not([href*="192.168.64.2/"]):after {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-#masthead {
+.container-header {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  z-index: 99;
+  background-color: white;
+}
+
+#masthead {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[12];
       grid-template-columns: repeat(12, 1fr);
   max-height: 80px;
-  background-color: white;
-  z-index: 99;
 }
 
 #masthead .site-branding {
@@ -1219,6 +1238,10 @@ a[href*="//"]:not([href*="192.168.64.2/"]):after {
 #masthead .menu-header-container ul li {
   margin-left: 48px;
   margin-top: 0;
+}
+
+#masthead .menu-header-container ul li.current-menu-item > a {
+  font-weight: 600;
 }
 
 #masthead .menu-header-container ul li:first-child {

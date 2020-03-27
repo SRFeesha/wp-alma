@@ -204,6 +204,7 @@ function cw_post_type() {
 			'show_in_rest' => true,
 			'query_var' => true,
 			'hierarchical' => false,
+			'taxonomies' => array('post_tag'),
 			'supports' => array(
 				'title', 
 				'editor', 

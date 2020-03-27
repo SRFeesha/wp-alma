@@ -1,12 +1,16 @@
 // HEADER
-#masthead {
+
+.container-header {
 	position: sticky;
 	top: 0;
+	z-index: 99;
+	background-color: white;
+}
+
+#masthead {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	max-height: 80px;
-	background-color: white;
-	z-index: 99;
 
 	.site-branding {
 		grid-column-start: 1;
@@ -25,6 +29,10 @@
 				margin-left: map-get($spacing, 6);
 				margin-top: 0;
 				
+				&.current-menu-item > a {
+					font-weight: 600;
+				}
+
 				&:first-child{
 					margin-left: 100px;
 				}

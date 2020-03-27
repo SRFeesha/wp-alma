@@ -23,7 +23,8 @@
                 query_posts(array(
                 'post_type' => 'case_study'
                 ));
-                while (have_posts()) : the_post(); ?>
+                while (have_posts()) : the_post(); 
+                    $post_tags = get_the_tags(); ?>
                     <div class="card">
                         <a class="card-link" href="<?php the_permalink() ?>">
                             <div class="card-image">
@@ -36,6 +37,15 @@
                                 <h2 class="card-title">
                                     <?php the_title() ?>
                                 </h2>
+                                <?php 
+                                if ( $post_tags ) { ?>
+                                    <div class="post-tags"> <?php
+                                        foreach( $post_tags as $tag ) {
+                                            echo ' <span class="tag-case-study">' . $tag->name . '</span> '; 
+                                        } ?>
+                                    </div> <?php 
+                                }
+                                ?>
                             </div>
                         </a>
                     </div>

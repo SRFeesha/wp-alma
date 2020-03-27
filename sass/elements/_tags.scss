@@ -1,0 +1,15 @@
+.post-tags {
+    margin-top: map-get($spacing, 2);
+    overflow: hidden;
+    max-height: 35px;
+}
+
+.tag-case-study {
+    display: inline-block;
+    margin-right: .5em;
+    margin-bottom: .5em;;
+    padding: .25em 1em;
+    border: solid 1px $color__neutral-200;
+    border-radius: 4px;
+    color: $color__neutral-700;
+}

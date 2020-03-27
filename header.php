@@ -24,7 +24,8 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'alma-wp' ); ?></a>
 
-	<header id="masthead" class="site-header">
+	<div class="container-header full-width">
+	<header id="masthead" class="site-header content-space">
 		<div class="site-branding">
 			<?php
 			the_custom_logo();
@@ -41,5 +42,6 @@
 			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
+	</div>
 
 	<div id="content" class="site-content">

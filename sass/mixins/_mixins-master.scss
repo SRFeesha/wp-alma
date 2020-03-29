@@ -71,3 +71,36 @@
       }
     }
   }
+
+
+
+
+
+
+@function translate-media-condition($c) {
+  $condMap: (
+		"screen": "only screen",
+		"print": "only print",
+		"retina": "(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5), (min-resolution: 120dpi)",
+     ">desktop": "(min-width: #{$mediaMaxWidth + 1})",
+		"<desktop": "(max-width: #{$mediaMaxWidth})", 		
+		">tablet": "(min-width: #{$mediaBp1Width + 1})",
+		"<tablet": "(max-width: #{$mediaBp1Width})",
+		">phone": "(min-width: #{$mediaMinWidth + 1})",
+		"<phone": "(max-width: #{$mediaMinWidth})"
+	);
+  @return map-get( $condMap, $c );
+}
+
+// The mdia mixin
+@mixin media($args...) {
+  $query: "";
+  @each $arg in $args {
+    $op: "";
+    @if ( $query != "" ) {
+      $op: " and ";
+    }
+    $query: $query + $op + translate-media-condition($arg);
+  }
+  @media #{$query}  { @content; }
+}

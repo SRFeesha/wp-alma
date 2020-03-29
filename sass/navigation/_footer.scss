@@ -39,3 +39,16 @@
 
     }
 }
+
+@include media("screen", "<desktop") {
+    .site-footer > .container-footer {
+        margin-left: 48px;
+        width: auto;
+    }
+
+    .footer-down > ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: .5em;
+    }
+}

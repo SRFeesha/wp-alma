@@ -1,15 +1,3 @@
-// .alignleft {
-// 	display: inline;
-// 	float: left;
-// 	margin-right: 1.5em;
-// }
-
-// .alignright {
-// 	display: inline;
-// 	float: right;
-// 	margin-left: 1.5em;
-// }
-
 .aligncenter {
 	clear: both;
 	@include center-block;
@@ -25,6 +13,9 @@
 		margin-left: 0;
 		margin-right: 0;
 		margin-bottom: 0;
+	}
+	@include media("<phone") {
+		display: block;
 	}
 }
 
@@ -89,6 +80,13 @@
 	.col-#{$i} {
 		grid-column-end: span $i;
 	}
+
+	@include media ("screen", "<phone"){
+		.col-#{$i} {
+			grid-column-end: initial;
+		}
+	}
+
 }
 
 // so we don't have to write col-x twelve time

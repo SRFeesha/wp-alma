@@ -1,5 +1,6 @@
 .horizontal-slider {
     width: 100vw;
+    padding-top: 8px; // the space for the card hover animation
     overflow-x: scroll;
     -ms-overflow-style: none;  /* Hide scrollbar in Internet Explorer 10+ */
     scrollbar-width: none;  /* Hide scrollbar in Firefox */

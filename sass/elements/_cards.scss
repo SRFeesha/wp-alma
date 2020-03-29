@@ -52,6 +52,7 @@
 
     &:hover {
         border-color: $color__primary-700;
+        transform: translateY(-8px);
 
         h2 {
             color: $color__primary-700;

@@ -26,3 +26,15 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+@include media("screen", "<phone") {
+	// .post,
+	// .page,
+	.content-space
+	// .site
+	 {
+		width: 100%;
+		padding: 0 1em;
+		margin: 0;
+	}
+}

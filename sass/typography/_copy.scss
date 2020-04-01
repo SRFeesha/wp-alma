@@ -55,12 +55,14 @@ p {
 .big,
 .has-big-font-size {
 	@include font-size(1.25);
+	@include fluid-font(3vw, 18px, 20px, 20px);
 }
 
 .bigger,
 .has-bigger-font-size {
 	@include font-size(1.5);
 	// line-height: 1.5;
+	@include fluid-font(3.5vw, 20px, 24px, 24px);
 }
 
 .caption,
@@ -69,4 +71,17 @@ p {
 	letter-spacing: 0.008em;
 	line-height: 1.43;
 	color: $color__neutral-600;
+}
+
+
+@include media("screen", "<phone"){
+	.big,
+	.has-big-font-size {
+		line-height: 1.3333;
+	}
+
+	.bigger,
+	.has-bigger-font-size {
+		line-height: 1.6;
+	}
 }

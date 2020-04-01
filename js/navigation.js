@@ -5,7 +5,12 @@
  * navigation support for dropdown menus.
  */
 ( function() {
-	var container, button, menu, links, i, len;
+	var body, container, button, menu, links, i, len;
+
+	body = document.getElementsByTagName("body")[0];
+	if ( ! body ) {
+		return;
+	}
 
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {
@@ -32,15 +37,43 @@
 
 	button.onclick = function() {
 		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
+			body.className = body.className.replace( ' lock-scroll', '' );
 			container.className = container.className.replace( ' toggled', '' );
 			button.setAttribute( 'aria-expanded', 'false' );
 			menu.setAttribute( 'aria-expanded', 'false' );
+			closeMenu();
 		} else {
+			body.className += ' lock-scroll';
 			container.className += ' toggled';
 			button.setAttribute( 'aria-expanded', 'true' );
 			menu.setAttribute( 'aria-expanded', 'true' );
+			showHamburger();
 		}
+
 	};
+
+	function openMenu() {
+		menu.style.display = "block";
+		gsap.to("ul.nav-menu", {duration: .2, opacity: 1});
+		gsap.to("ul.nav-menu", {duration: .4, x: 0});
+		gsap.from("ul.nav-menu .menu-item", {duration: .4, x: 1000, opacity: 0});
+		gsap.to("ul.nav-menu .menu-item", {duration: .4, x: 0, stagger: 0.1, opacity: 1});
+		gsap.to(".site-branding svg path", {duration: .4, fill: "#f0f4f8"});
+	}
+
+	function closeMenu() {
+		gsap.to("ul.nav-menu", {duration: .2, opacity: 0});
+		gsap.to("ul.nav-menu", {duration: .4, x: 200, onComplete: hideHamburger});
+		gsap.to(".site-branding svg path", {duration: .4, fill: "#0f609b"});
+	}
+
+	function hideHamburger() {
+		menu.style.display = "none";
+	}
+	function showHamburger() {
+		menu.style.display = "block";
+		openMenu();
+	}
 
 	// Get all the link elements within the menu.
 	links    = menu.getElementsByTagName( 'a' );

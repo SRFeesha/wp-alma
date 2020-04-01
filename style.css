@@ -66,6 +66,7 @@ html {
  */
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 /**
@@ -407,25 +408,67 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 54px;
   font-size: 3.375rem;
+  font-size: 36px;
+  font-size: 5vw;
   line-height: 1;
   font-weight: 800;
   color: #102A43;
 }
 
+@media (max-width: 560px) {
+  h1 {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1080px) {
+  h1 {
+    font-size: 54px;
+  }
+}
+
 h2 {
   font-size: 36px;
   font-size: 2.25rem;
+  font-size: 32px;
+  font-size: 4vw;
   line-height: 1.33;
   font-weight: 600;
-  color: #2680C2;
+  color: #334E68;
+}
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 900px) {
+  h2 {
+    font-size: 36px;
+  }
 }
 
 h3 {
   font-size: 24px;
   font-size: 1.5rem;
+  font-size: 24px;
+  font-size: 3vw;
   line-height: 2rem;
   font-weight: 600;
   color: #627D98;
+}
+
+@media (max-width: 533.33333px) {
+  h3 {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 800px) {
+  h3 {
+    font-size: 24px;
+  }
 }
 
 h4 {
@@ -436,6 +479,19 @@ h4 {
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: #627D98;
+}
+
+@media only screen and (max-width: 480px) {
+  h2 {
+    line-height: 1.1666;
+  }
+  h3 {
+    line-height: 1.25;
+    font-weight: 800;
+  }
+  h4 {
+    line-height: 1.428571;
+  }
 }
 
 dfn, cite, em, i {
@@ -494,12 +550,44 @@ p {
 .has-big-font-size {
   font-size: 20px;
   font-size: 1.25rem;
+  font-size: 20px;
+  font-size: 3vw;
+}
+
+@media (max-width: 600px) {
+  .big,
+  .has-big-font-size {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 666.66667px) {
+  .big,
+  .has-big-font-size {
+    font-size: 20px;
+  }
 }
 
 .bigger,
 .has-bigger-font-size {
   font-size: 24px;
   font-size: 1.5rem;
+  font-size: 24px;
+  font-size: 3.5vw;
+}
+
+@media (max-width: 571.42857px) {
+  .bigger,
+  .has-bigger-font-size {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 685.71429px) {
+  .bigger,
+  .has-bigger-font-size {
+    font-size: 24px;
+  }
 }
 
 .caption,
@@ -509,6 +597,17 @@ p {
   letter-spacing: 0.008em;
   line-height: 1.43;
   color: #486581;
+}
+
+@media only screen and (max-width: 480px) {
+  .big,
+  .has-big-font-size {
+    line-height: 1.3333;
+  }
+  .bigger,
+  .has-bigger-font-size {
+    line-height: 1.6;
+  }
 }
 
 .gray-500 {
@@ -595,7 +694,7 @@ dd {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 192px;
+  margin-top: 12rem;
 }
 
 .alma-services > div > * {
@@ -796,7 +895,7 @@ table {
   height: 256px;
   border: 2px solid #F0F4F8;
   border-radius: 4px;
-  padding-left: 16px;
+  padding-left: 1rem;
   background-color: white;
 }
 
@@ -852,7 +951,7 @@ table {
 }
 
 .post-tags {
-  margin-top: 8px;
+  margin-top: 0.5rem;
   overflow: hidden;
   max-height: 35px;
 }
@@ -1052,10 +1151,10 @@ textarea {
 }
 
 form {
-  padding-top: 96px;
-  padding-right: 192px;
-  padding-bottom: 96px;
-  padding-left: 96px;
+  padding-top: 6rem;
+  padding-right: 12rem;
+  padding-bottom: 6rem;
+  padding-left: 6rem;
   background-color: #F0F4F8;
   border-radius: 0 8px 8px 0;
   max-width: 822px;
@@ -1214,6 +1313,10 @@ a[href*="//"]:not([href*="192.168.64.2/"]):after {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+body.lock-scroll {
+  overflow: hidden;
+}
+
 .container-header {
   position: -webkit-sticky;
   position: sticky;
@@ -1260,7 +1363,7 @@ a[href*="//"]:not([href*="192.168.64.2/"]):after {
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
-  margin: auto 0 auto 48px;
+  margin: auto 0 auto 3rem;
 }
 
 .menu-header-container ul li.current-menu-item > a {
@@ -1285,15 +1388,9 @@ a[href*="//"]:not([href*="192.168.64.2/"]):after {
 }
 
 @media (max-width: 480px) {
-  ul.menu.nav-menu {
-    display: none;
-  }
-  .menu-toggle,
-  .main-navigation.toggled ul {
-    display: block;
-  }
   .container-header {
     height: 56px;
+    border-bottom: solid 1px #F0F4F8;
   }
   .site-header {
     -ms-grid-columns: 1fr 1fr;
@@ -1301,6 +1398,7 @@ a[href*="//"]:not([href*="192.168.64.2/"]):after {
   }
   .site-branding {
     grid-column-end: 2;
+    z-index: 100;
   }
   .main-navigation {
     display: -ms-grid;
@@ -1311,8 +1409,9 @@ a[href*="//"]:not([href*="192.168.64.2/"]):after {
     grid-column-end: 3;
   }
   .main-navigation button {
-    background-color: white;
+    background-color: transparent;
     border: none;
+    display: inline-block;
   }
   .main-navigation button svg {
     height: auto;
@@ -1321,32 +1420,40 @@ a[href*="//"]:not([href*="192.168.64.2/"]):after {
     height: 2px;
   }
   .main-navigation.toggled button {
-    background-color: #102A43;
-    display: inline-block;
     border-radius: 0;
+    z-index: 100;
   }
   .main-navigation.toggled button .hamburger-line {
     fill: #F0F4F8;
   }
+  .main-navigation.toggled ul {
+    display: block;
+  }
   .menu-header-container ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
     background-color: #102A43;
     height: 100vh;
     width: 100vw;
     overflow: hidden;
   }
   .menu-header-container ul .menu-item {
-    margin: 0 0 24px 96px;
+    margin: 0 0 1.5rem 6rem;
   }
   .menu-header-container ul .menu-item:first-child {
-    margin-left: 96px;
-    padding-top: 96px;
+    margin-left: 6rem;
+    padding-top: 6rem;
   }
   .menu-header-container ul .menu-item:last-child {
     width: -webkit-min-content;
     width: -moz-min-content;
     width: min-content;
     padding: 0 8px;
-    margin: 48px 96px 64px;
+    margin: 3rem 6rem 4rem;
     background-color: #102A43;
     border: solid 2px #334E68;
   }
@@ -1360,6 +1467,7 @@ a[href*="//"]:not([href*="192.168.64.2/"]):after {
     padding: 12px 0;
     font-size: 20px;
     line-height: 24px;
+    color: #F0F4F8;
   }
   .menu-header-container ul .menu-item a:first-child {
     margin: 0;
@@ -1375,7 +1483,7 @@ a[href*="//"]:not([href*="192.168.64.2/"]):after {
 .site-footer {
   justify-items: left;
   border-top: solid 2px #F0F4F8;
-  margin-top: 128px;
+  margin-top: 8rem;
 }
 
 .site-footer ul {
@@ -1386,7 +1494,7 @@ a[href*="//"]:not([href*="192.168.64.2/"]):after {
 }
 
 .site-footer ul li {
-  margin-top: 8px;
+  margin-top: 0.5rem;
 }
 
 .site-footer a,
@@ -1400,13 +1508,13 @@ a[href*="//"]:not([href*="192.168.64.2/"]):after {
 }
 
 .site-footer .footer-title {
-  margin-top: 96px;
+  margin-top: 6rem;
   margin-bottom: 0;
   color: #334E68;
 }
 
 .site-footer .footer-down {
-  margin-top: 96px;
+  margin-top: 6rem;
   margin-bottom: 24px;
 }
 
@@ -1549,6 +1657,13 @@ a[href*="//"]:not([href*="192.168.64.2/"]):after {
 .width-88 {
   width: 88%;
   max-width: 88%;
+}
+
+@media only screen and (max-width: 480px) {
+  [class*="width-"] {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 .full-width {
@@ -1756,67 +1871,67 @@ a[href*="//"]:not([href*="192.168.64.2/"]):after {
 }
 
 .margin-top-0 {
-  margin-top: 0px;
+  margin-top: 0rem;
 }
 
 .margin-top-1 {
-  margin-top: 4px;
+  margin-top: 0.25rem;
 }
 
 .margin-top-2 {
-  margin-top: 8px;
+  margin-top: 0.5rem;
 }
 
 .margin-top-3 {
-  margin-top: 16px;
+  margin-top: 1rem;
 }
 
 .margin-top-4 {
-  margin-top: 24px;
+  margin-top: 1.5rem;
 }
 
 .margin-top-5 {
-  margin-top: 32px;
+  margin-top: 2rem;
 }
 
 .margin-top-6 {
-  margin-top: 48px;
+  margin-top: 3rem;
 }
 
 .margin-top-7 {
-  margin-top: 64px;
+  margin-top: 4rem;
 }
 
 .margin-top-8 {
-  margin-top: 96px;
+  margin-top: 6rem;
 }
 
 .margin-top-9 {
-  margin-top: 128px;
+  margin-top: 8rem;
 }
 
 .margin-top-10 {
-  margin-top: 192px;
+  margin-top: 12rem;
 }
 
 .margin-top-11 {
-  margin-top: 256px;
+  margin-top: 16rem;
 }
 
 .margin-top-12 {
-  margin-top: 384px;
+  margin-top: 24rem;
 }
 
 .margin-top-13 {
-  margin-top: 512px;
+  margin-top: 32rem;
 }
 
 .margin-top-14 {
-  margin-top: 640px;
+  margin-top: 40rem;
 }
 
 .margin-top-15 {
-  margin-top: 768px;
+  margin-top: 48rem;
 }
 
 #come-lavoriamo div {
@@ -1831,6 +1946,7 @@ a[href*="//"]:not([href*="192.168.64.2/"]):after {
   grid-column-end: 13;
   font-weight: 600;
   font-size: 48px;
+  font-size: 3rem;
   line-height: 1.33;
   color: #003E6B;
 }
@@ -2120,6 +2236,14 @@ a[href*="//"]:not([href*="192.168.64.2/"]):after {
   margin: 0 0 1.5em;
 }
 
+@media only screen and (max-width: 480px) {
+  .content-space {
+    width: 100%;
+    padding: 0 1em;
+    margin: 0;
+  }
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -2160,67 +2284,67 @@ a[href*="//"]:not([href*="192.168.64.2/"]):after {
 }
 
 .single-case_study .margin-top-0 {
-  margin-top: 0px;
+  margin-top: 0rem;
 }
 
 .single-case_study .margin-top-1 {
-  margin-top: 4px;
+  margin-top: 0.25rem;
 }
 
 .single-case_study .margin-top-2 {
-  margin-top: 8px;
+  margin-top: 0.5rem;
 }
 
 .single-case_study .margin-top-3 {
-  margin-top: 16px;
+  margin-top: 1rem;
 }
 
 .single-case_study .margin-top-4 {
-  margin-top: 24px;
+  margin-top: 1.5rem;
 }
 
 .single-case_study .margin-top-5 {
-  margin-top: 32px;
+  margin-top: 2rem;
 }
 
 .single-case_study .margin-top-6 {
-  margin-top: 48px;
+  margin-top: 3rem;
 }
 
 .single-case_study .margin-top-7 {
-  margin-top: 64px;
+  margin-top: 4rem;
 }
 
 .single-case_study .margin-top-8 {
-  margin-top: 96px;
+  margin-top: 6rem;
 }
 
 .single-case_study .margin-top-9 {
-  margin-top: 128px;
+  margin-top: 8rem;
 }
 
 .single-case_study .margin-top-10 {
-  margin-top: 192px;
+  margin-top: 12rem;
 }
 
 .single-case_study .margin-top-11 {
-  margin-top: 256px;
+  margin-top: 16rem;
 }
 
 .single-case_study .margin-top-12 {
-  margin-top: 384px;
+  margin-top: 24rem;
 }
 
 .single-case_study .margin-top-13 {
-  margin-top: 512px;
+  margin-top: 32rem;
 }
 
 .single-case_study .margin-top-14 {
-  margin-top: 640px;
+  margin-top: 40rem;
 }
 
 .single-case_study .margin-top-15 {
-  margin-top: 768px;
+  margin-top: 48rem;
 }
 
 .single-case_study #main h1 + .wp-block-columns > *:first-child {
@@ -2234,8 +2358,8 @@ a[href*="//"]:not([href*="192.168.64.2/"]):after {
 }
 
 .single-case_study .post-navigation {
-  margin-top: 128px;
-  margin-bottom: 64px;
+  margin-top: 8rem;
+  margin-bottom: 4rem;
   font-size: 24px;
 }
 
@@ -2351,7 +2475,7 @@ a > .blog-post-card:hover h3 {
 }
 
 .pagination {
-  margin-top: 128px;
+  margin-top: 8rem;
 }
 
 .pagination .page-numbers {
@@ -2397,7 +2521,7 @@ a > .blog-post-card:hover h3 {
 
 .single-post .site-content figure,
 .single-post .site-content .attachment-post-thumbnail {
-  margin: 48px 0 64px 0;
+  margin: 3rem 0 4rem 0;
 }
 
 .single-post .site-content p, .single-post .site-content ul, .single-post .site-content ol, .single-post .site-content li {

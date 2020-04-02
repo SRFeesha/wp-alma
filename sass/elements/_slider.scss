@@ -6,9 +6,26 @@
     scrollbar-width: none;  /* Hide scrollbar in Firefox */
     cursor: -webkit-grab; 
     cursor: grab;
+    position: relative;
 
     &::-webkit-scrollbar {
         display: none; /* Hide scrollbar in Safari and Chrome */
+    }
+
+    .arrow.right-arrow {
+        content: "→";
+        display: inline-block;
+        font-size: 3rem;
+        background-color: white;
+        color: green;
+        position: sticky;
+        left: 92%;
+        bottom: 50%;
+        padding: 1rem;
+        border-radius: 50%;
+        border: solid 2px $color__neutral-200;
+        box-shadow: 0 0 0 white;
+        cursor: pointer;
     }
 
     & > div{
@@ -18,8 +35,9 @@
         grid-gap: 2rem;
         // padding: 32px;
 
-        & > div:first-child {
-            margin-left: calc( ((100vw - 1168px) / 2) - 32px ); //align first card with content
+        & > a:first-child {
+            //align first card with content
+            margin-left: calc( ((100vw - 1168px) / 2) - 32px ); 
         }
 
         &:after {
@@ -30,23 +48,40 @@
 }
 
 @include media("screen", "<phone") {
-    .horizontal-slider {
+    
+    // .horizontal-slider.full-width {
+	// 	margin: 0;
+	// 	grid-template-rows: 1fr;
+	// 	cursor: auto;
+
+	// 	& > div {
+	// 		// grid-auto-rows: 1fr 1fr;
+	// 		display: block;
+	// 	}
+	// }
+    
+    .horizontal-slider.full-width {
         width: auto;
         padding-top: 0;
         overflow: hidden;
+		margin: 0;
+		grid-template-rows: 1fr;
+		cursor: auto;
+        overflow: visible;
+    
+        & > div{
+            // display: block;
+            grid-auto-flow: row;
+            grid-auto-columns: 1fr;
+            grid-gap: 4rem;
 
-    & > div{
-        grid-auto-flow: row;
-        grid-auto-columns: 1fr;
-        grid-gap: 4rem;
+            & > a:first-child {
+                margin-left: 0;
+            }
 
-        & > div:first-child {
-            margin-left: 0;
-        }
-
-        &:after {
-            content: none;
+            &:after {
+                content: none;
+            }
         }
     }
-}
 }

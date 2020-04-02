@@ -812,12 +812,13 @@ table {
 }
 
 .card {
-  border: 2px solid #D9E2EC;
-  border-radius: 4px;
-  padding-left: 2rem;
-  background-color: white;
   display: -ms-grid;
   display: grid;
+  padding-left: 3rem;
+  border: 2px solid #D9E2EC;
+  border-radius: 4px;
+  background-color: white;
+  overflow: hidden;
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
@@ -825,7 +826,6 @@ table {
 .card-link {
   text-decoration: none;
   height: 100%;
-  width: 100%;
 }
 
 .card-link:hover .card {
@@ -969,20 +969,21 @@ table {
   margin: 0;
 }
 
-.card-blog-post.card > h3.entry-title {
+.card-blog-post.card > h3 {
   padding: 0 1rem;
+  color: #334E68;
   position: relative;
   overflow: hidden;
   margin: 0;
 }
 
-.card-blog-post.card > h3.entry-title:after {
+.card-blog-post.card > h3:after {
   content: "";
   text-align: right;
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 30%;
+  width: 40%;
   height: 2rem;
   background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(50%, white));
   background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%);
@@ -991,6 +992,11 @@ table {
 .card-blog-post .entry-meta {
   padding: 0 1rem;
   font-weight: 400;
+}
+
+.card-blog-post .entry-meta > span {
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @media only screen and (max-width: 480px) {
@@ -1033,6 +1039,30 @@ table {
     grid-auto-flow: row;
     row-gap: 4rem;
   }
+  .card-blog-post {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+  }
+  .card-blog-post.card > h3 {
+    font-size: 24px;
+    font-size: 1.5rem;
+    color: #0F609B;
+    font-weight: 600;
+    line-height: 1.3333;
+  }
+  .card-certificate {
+    width: 100%;
+    height: 0;
+    margin: 0;
+    border: none;
+    overflow: visible;
+  }
+  .card-certificate:first-child {
+    margin-top: 2.5rem;
+  }
+  .card-certificate figure {
+    display: none;
+  }
 }
 
 .horizontal-slider {
@@ -1045,11 +1075,30 @@ table {
   /* Hide scrollbar in Firefox */
   cursor: -webkit-grab;
   cursor: grab;
+  position: relative;
 }
 
 .horizontal-slider::-webkit-scrollbar {
   display: none;
   /* Hide scrollbar in Safari and Chrome */
+}
+
+.horizontal-slider .arrow.right-arrow {
+  content: "→";
+  display: inline-block;
+  font-size: 3rem;
+  background-color: white;
+  color: green;
+  position: -webkit-sticky;
+  position: sticky;
+  left: 92%;
+  bottom: 50%;
+  padding: 1rem;
+  border-radius: 50%;
+  border: solid 2px #BCCCDC;
+  -webkit-box-shadow: 0 0 0 white;
+          box-shadow: 0 0 0 white;
+  cursor: pointer;
 }
 
 .horizontal-slider > div {
@@ -1061,7 +1110,7 @@ table {
   grid-gap: 2rem;
 }
 
-.horizontal-slider > div > div:first-child {
+.horizontal-slider > div > a:first-child {
   margin-left: calc( ((100vw - 1168px) / 2) - 32px);
 }
 
@@ -1071,20 +1120,25 @@ table {
 }
 
 @media only screen and (max-width: 480px) {
-  .horizontal-slider {
+  .horizontal-slider.full-width {
     width: auto;
     padding-top: 0;
     overflow: hidden;
+    margin: 0;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    cursor: auto;
+    overflow: visible;
   }
-  .horizontal-slider > div {
+  .horizontal-slider.full-width > div {
     grid-auto-flow: row;
     grid-auto-columns: 1fr;
     grid-gap: 4rem;
   }
-  .horizontal-slider > div > div:first-child {
+  .horizontal-slider.full-width > div > a:first-child {
     margin-left: 0;
   }
-  .horizontal-slider > div:after {
+  .horizontal-slider.full-width > div:after {
     content: none;
   }
 }
@@ -2105,17 +2159,6 @@ body.lock-scroll {
   grid-column-end: 13;
 }
 
-@media only screen and (max-width: 480px) {
-  .horizontal-slider.full-width {
-    margin: 0;
-    -ms-grid-rows: 1fr;
-        grid-template-rows: 1fr;
-  }
-  .horizontal-slider.full-width > div {
-    grid-auto-rows: 1fr 1fr;
-  }
-}
-
 /*--------------------------------------------------------------
 # Gutenberg Color Palette
 --------------------------------------------------------------*/
@@ -2698,6 +2741,33 @@ body.lock-scroll {
 .related-posts > h3 {
   -ms-grid-column: span 3;
       grid-column-start: span 3;
+}
+
+@media only screen and (max-width: 480px) {
+  .blog-catalog {
+    display: block;
+  }
+  .blog-post-grid {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    grid-auto-flow: row;
+    row-gap: 4rem;
+  }
+  .single-post .site-content {
+    display: block;
+  }
+  .related-posts {
+    display: block;
+  }
+  .related-posts .card {
+    margin-top: 4rem;
+  }
+  .related-posts .card:first-child {
+    margin-top: 1.5rem;
+  }
+  .related-posts .card > h3 {
+    margin: 0;
+  }
 }
 
 /*--------------------------------------------------------------

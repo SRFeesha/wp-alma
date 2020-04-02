@@ -127,6 +127,8 @@ function alma_wp_scripts() {
 	wp_enqueue_script( 'alma-wp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	
 	wp_enqueue_script( 'alma-wp-gsap', get_template_directory_uri() . '/inc/gsap/gsap.min.js', array(), '20151215', true );
+	
+	wp_enqueue_script( 'alma-wp-horizontal-slider', get_template_directory_uri() . '/js/horizontal-slider.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'alma-wp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 

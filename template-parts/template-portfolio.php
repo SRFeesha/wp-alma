@@ -25,8 +25,8 @@
                 ));
                 while (have_posts()) : the_post(); 
                     $post_tags = get_the_tags(); ?>
-                    <div class="card">
-                        <a class="card-link" href="<?php the_permalink() ?>">
+                    <a class="card-link" href="<?php the_permalink() ?>">
+                        <div class="card card-portfolio">
                             <div class="card-image">
                                 <?php the_post_thumbnail('full', ['class' => 'card-featured-img']) ?>
                             </div>
@@ -47,8 +47,8 @@
                                 }
                                 ?>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 <?php endwhile;
                 get_footer();
             ?>

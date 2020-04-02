@@ -40,8 +40,8 @@ get_header();
 		<div class="related-posts margin-top-7">
 			<h3>Potrebbe interessarti anche</h3>
 				<?php while ( $related->have_posts() ): $related->the_post(); ?>
-					<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-						<div class="blog-post-card">
+					<a class="card-link" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+						<div class="card card-blog-post">
 						
 							<?php alma_wp_post_thumbnail(); ?>
 

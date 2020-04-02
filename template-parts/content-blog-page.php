@@ -10,7 +10,7 @@
 ?>
 
 <a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-	<div class="blog-post-card">
+	<div class="card card-blog-post">
 	
 		<?php alma_wp_post_thumbnail(); ?>
 

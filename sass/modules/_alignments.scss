@@ -140,3 +140,15 @@
 		}
 	}
 }
+
+
+@include media("screen", "<phone") {
+    .horizontal-slider.full-width {
+		margin: 0;
+		grid-template-rows: 1fr;;
+
+		& > div {
+			grid-auto-rows: 1fr 1fr;
+		}
+	}
+}

@@ -1,64 +1,77 @@
-.card-team-member {
-    width: 664px;
-    max-height: 422px;;
-    border: 2px solid $color__neutral-050;
+// ********
+// CHI SIAMO
+// ********
+
+.card {
+    border: 2px solid $color__neutral-100;
     border-radius: 4px;
-    padding-left: 32px;
+    padding-left: 2rem;
     background-color: white;
+    display: grid;
+    transition: all 300ms;
+}
 
-    p {
-        padding-right: 16px;
-    }
+.card-link {
+    text-decoration: none;
+    height: 100%;
+    width: 100%;   
 
-    & > div {
-        display: grid;
-        grid-template-columns: 4fr 3fr;
-    }
+    &:hover .card{
+        border-color: $color__primary-700;
+        transform: translateY(-8px);
 
-    .image-team-member {
-        margin: 0;
-        line-height: 0; //being this a figure, there is some space underneath the image due to skipped row of text
-
-        img {
-            object-fit: cover;
-            border-radius: 50% 0 0 50%;
+        h2,
+        h3 {
+            color: $color__primary-700;
         }
     }
 }
 
+// card img??
 
-//Portfolio Card
+// ********
+// TEAM MEMBER
+// ********
+.card-team-member {
+    width: 664px;
+    height: 100%;
+    max-height: 422px;;
+    grid-template-columns: 4fr 3fr;
+    grid-template-areas: "content image";
+
+    p {
+        padding: 0 1rem 4rem 0;
+    }
+
+    img {
+        object-fit: cover;
+        margin-top: auto;
+        height: 100%;
+    }
+
+    .team-card-content {
+        grid-area: content;
+    }
+
+    .team-member-photo {
+        grid-area: image;
+    }
+
+}
+
+// ********
+// PORTFOLIO
+// ********
 .card-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(13rem, 29rem));
     grid-gap: 6rem 7rem;
 }
 
-.card-link {
-    text-decoration: none;
-    height: 100%;
-    width: 100%;
-}
-
-.card {
-    border: solid 2px $color__neutral-050;
-    border-radius: 4px;
-    // max-width: 29rem;
-    // max-height: 26.5rem;
+.card-portfolio {
+    padding-left: 0;
     width: 29rem;
     height: 26.5rem;
-    background-color: white;
-    transition: all 300ms;
-
-    &:hover {
-        border-color: $color__primary-700;
-        transform: translateY(-8px);
-
-        h2 {
-            color: $color__primary-700;
-        }
-    }
-
 }
 
 .card-featured-img {
@@ -81,14 +94,15 @@
 }
 
 
+// ********
+// COSA FACCIAMO
+// ********
+
 // certificate
 .card-certificate {
     width: 384px;
     height: 256px;;
-    border: 2px solid $color__neutral-050;
-    border-radius: 4px;
-    padding-left: map-get($spacing, 3);
-    background-color: white;
+    padding-left: 1rem;
 
     img {
         width: 352px;
@@ -100,5 +114,120 @@
         &:hover {
             filter: grayscale(0);
         }
+    }
+}
+
+
+// ********
+// BLOG
+// ********
+
+// tags
+.entry-meta {
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    grid-gap: 1em;
+
+    span:before{    
+        content: '';
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        margin-right: 8px;
+        margin-bottom: -2px;
+    }
+
+    .cat-links:before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='icon-folder'%3E%3Cg%3E%3Cpath class='primary' d='M22 10H2V6c0-1.1.9-2 2-2h7l2 2h7a2 2 0 0 1 2 2v2z' fill='%23143d6b' /%3E%3Crect width='20' height='12' x='2' y='8' class='secondary' fill='%23829ab1' rx='2'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .posted-on:before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='icon-time'%3E%3Ccircle cx='12' cy='12' r='10' class='primary' fill='%2390a4bb' /%3E%3Cpath class='secondary' fill='%23143d6b' d='M13 11.59l3.2 3.2a1 1 0 0 1-1.4 1.42l-3.5-3.5A1 1 0 0 1 11 12V7a1 1 0 0 1 2 0v4.59z'/%3E%3C/svg%3E");
+    }
+}
+
+.card-blog-post {
+    grid-template-rows: 17rem 0.625rem 6rem;
+    grid-gap: 1rem;
+    padding: 0 0 1.5rem 0;
+
+    .post-thumbnail > img.wp-post-image,
+    img {
+        object-fit: fill;
+        width: 100%;
+        height: 100%;
+        border-radius: 2px 2px 0 0;
+        margin: 0;
+    }
+
+    &.card > h3.entry-title {
+        padding: 0 1rem;
+        // color: $color__neutral-700;
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+
+        // Overflow
+        &:after{
+            content: "";
+            text-align: right;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 30%;
+            height: 2rem;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+        }
+    }
+
+    .entry-meta {
+        padding: 0 1rem;
+        font-weight: 400;
+    }
+}
+
+
+@include media("screen", "<phone") {
+    .card-link:hover .card{
+        border-color: inherit;
+        // transform: none;
+
+        h2,
+        h3 {
+            color: inherit;
+        }
+    }
+
+    .card-team-member {
+        grid-template-rows: 1fr min-content;
+        grid-template-columns: 100%;
+        width: 100%;
+        padding-left: 0;
+        max-height: none;
+        grid-template-areas:    "image" 
+                                "content";
+
+        .team-card-content {
+            margin: 0 1rem;
+        }
+
+        img {
+            max-height: 11rem;
+            border-radius: 0 0 50% 50%;
+            width: 75%;
+            object-position: 50% 20%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    
+    .card-portfolio {
+        width: 100%;
+    }
+
+    .card-grid {
+        grid-template-columns: 100%;
+        grid-auto-flow: row;
+        row-gap: 4rem;
     }
 }

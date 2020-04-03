@@ -710,7 +710,6 @@ dd {
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 0.97px;
-  color: #334E68;
 }
 
 .service:before {
@@ -803,6 +802,11 @@ dd {
   .service {
     text-align: center;
     display: block;
+  }
+  .service h3 {
+    text-transform: none;
+    font-size: 24px;
+    letter-spacing: 0;
   }
 }
 
@@ -1738,7 +1742,7 @@ body.lock-scroll {
   color: #627D98;
 }
 
-@media only screen and (max-width: 1180px) {
+@media only screen and (max-width: 1200px) {
   .site-footer > .container-footer {
     margin-left: 48px;
     width: auto;
@@ -2443,6 +2447,12 @@ body.lock-scroll {
   margin: auto;
 }
 
+@media only screen and (max-width: 1200px) {
+  .content-space {
+    padding: 0 1rem;
+  }
+}
+
 .updated:not(.published) {
   display: none;
 }
@@ -2450,14 +2460,6 @@ body.lock-scroll {
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
-}
-
-@media only screen and (max-width: 480px) {
-  .content-space {
-    width: 100%;
-    padding: 0 1em;
-    margin: 0;
-  }
 }
 
 /*--------------------------------------------------------------

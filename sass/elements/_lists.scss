@@ -48,7 +48,6 @@ dd {
 		text-transform: uppercase;
 		font-size: 14px;
 		letter-spacing: 0.97px;
-		color: $color__neutral-700;
 	}
 
 	&:before {
@@ -106,5 +105,11 @@ dd {
 	.service {
 		text-align: center;
 		display: block;
+
+		h3 {
+			text-transform: none;
+			font-size: 24px;
+			letter-spacing: 0;
+		}
 	}
 }

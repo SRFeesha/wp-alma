@@ -8,33 +8,20 @@
 .site {
 	max-width: 1168px;
 	width: 100%;
-	// padding: 1rem;
 	margin: auto;
+}
+
+@include media("screen", "<desktop") {
+	.content-space {
+		padding: 0 1rem;
+	}
 }
 
 .updated:not(.published) {
 	display: none;
 }
 
-// .page-content,
-// .entry-content,
-// .entry-summary {
-// 	margin: 1.5em 0 0;
-// }
-
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
-}
-
-@include media("screen", "<phone") {
-	// .post,
-	// .page,
-	.content-space
-	// .site
-	 {
-		width: 100%;
-		padding: 0 1em;
-		margin: 0;
-	}
 }

@@ -195,7 +195,7 @@
 
 @include media("screen", "<phone") {
     .card-link:hover .card{
-        border-color: inherit;
+        border-color: $color__neutral-100;
         // transform: none;
 
         h2,

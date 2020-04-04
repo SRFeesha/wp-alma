@@ -2,164 +2,140 @@
 
 @import "fields";
 
+div.wpforms-container-full {
+    margin-bottom: 0;
 
-.two-section-form > div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 0;
+    .wpforms-field-container:before {
+        content: "Iniziamo un progetto insieme!";
+        font-size: 2rem;
+        line-height: 1.1666;
+        color: green;
+        text-align: center;
+        font-style: italic;
+        color: $color__primary-400;
+        display: block;
+        margin-bottom: map-get($spacing, 5);
+    }
+}
 
-    .side-form.left {
-        background-color: $color__primary-500;
-        width: 100%;
-        padding: 96px 48px 96px 48px;
-        border-radius: 8px 0 0 8px;
+.form-description {
+    display: none;
+}
 
-        h3 {
-            margin: 0;
-            line-height: 1.33;
-        }
+.other-channels {
+    @include margin-top(7);
 
-        p {
-            margin: 0;
-            margin-top: 16px;
-        }
+    p {
+        margin-bottom: map-get($spacing, 4);
+        margin-left: map-get($spacing, 2);
 
-        p,
-        h3,
-        h4,
-        a {
-            color: $color__neutral-050;
-        }
-
-        & > div {
-            display: grid;
-            grid-template-rows: 1fr min-content;
-            justify-content: space-around;
-            height: 100%;
-        }
-        
-        .other-channels {
-            a {
-
-                text-decoration: none;
-            }
-        
-            p:before {
-                content: "";
-                height: 16px;
-                width: 16px;
-                display: inline-block;
-                margin-right: 8px;
-                margin-bottom: -2px;
-            }
-
-            .tel:before {
-                background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.7162 10.5022C13.7366 10.5022 12.7747 10.349 11.8633 10.0478C11.4167 9.89542 10.8676 10.0352 10.595 10.3151L8.796 11.6732C6.70963 10.5595 5.42446 9.27475 4.32596 7.20404L5.64408 5.45188C5.98654 5.10988 6.10938 4.61029 5.96221 4.14154C5.65971 3.22529 5.50604 2.26392 5.50604 1.28392C5.50608 0.575958 4.93013 0 4.22221 0H1.28387C0.575958 0 0 0.575958 0 1.28387C0 9.39846 6.60158 16 14.7162 16C15.4241 16 16 15.424 16 14.7161V11.786C16 11.0781 15.424 10.5022 14.7162 10.5022Z' fill='%23B6E0FE'/%3E%3C/svg%3E%0A");
-            }
-
-            .wa:before {
-                background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.60888 0.00925298C3.34886 0.210451 -0.0128861 3.72954 3.71346e-05 7.95991C0.00397198 9.24837 0.317564 10.4645 0.870757 11.5391L0.0214088 15.6286C-0.0245364 15.8498 0.176604 16.0435 0.398151 15.9915L4.43805 15.0421C5.47596 15.5549 6.64175 15.8511 7.87556 15.8698C12.2297 15.9357 15.8603 12.5064 15.996 8.18904C16.1415 3.56114 12.2908 -0.21192 7.60888 0.00925298ZM12.4293 12.3289C11.2462 13.5025 9.67317 14.1488 8.00001 14.1488C7.02031 14.1488 6.08235 13.9307 5.21209 13.5007L4.64949 13.2227L2.17261 13.8048L2.69398 11.2944L2.41681 10.756C1.96503 9.87837 1.73596 8.92936 1.73596 7.93534C1.73596 6.27567 2.38753 4.71537 3.57064 3.54178C4.74319 2.37871 6.34189 1.72189 8.00012 1.72189C9.67328 1.72192 11.2463 2.36822 12.4294 3.54174C13.6125 4.71529 14.2641 6.27559 14.2641 7.93523C14.2641 9.58009 13.6019 11.1659 12.4293 12.3289Z' fill='%23B6E0FE'/%3E%3Cpath d='M11.8829 9.65627L10.3333 9.21492C10.1296 9.15691 9.91023 9.21423 9.76178 9.36426L9.38284 9.74722C9.22306 9.9087 8.9806 9.96059 8.76912 9.87572C8.03608 9.58146 6.49408 8.22151 6.10029 7.54128C5.98668 7.34505 6.00547 7.09973 6.14496 6.92069L6.4758 6.49614C6.60542 6.3298 6.63277 6.10641 6.54705 5.91413L5.8951 4.45152C5.73894 4.1012 5.28763 3.99923 4.99278 4.24657C4.5603 4.6094 4.04715 5.16076 3.98477 5.77159C3.87479 6.84852 4.34041 8.20609 6.10118 9.83619C8.13534 11.7194 9.76429 11.9682 10.8249 11.7134C11.4265 11.5688 11.9072 10.9894 12.2106 10.515C12.4175 10.1916 12.2541 9.76199 11.8829 9.65627Z' fill='%23B6E0FE'/%3E%3C/svg%3E%0A"); 
-            }   
-            
-            .chatbot:before {
-                background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.60888 0.00925298C3.34886 0.210451 -0.0128861 3.72954 3.71346e-05 7.95991C0.00397198 9.24837 0.317564 10.4645 0.870757 11.5391L0.0214088 15.6286C-0.0245364 15.8498 0.176604 16.0435 0.398151 15.9915L4.43805 15.0421C5.47596 15.5549 6.64175 15.8511 7.87556 15.8698C12.2297 15.9357 15.8603 12.5064 15.996 8.18904C16.1415 3.56114 12.2908 -0.21192 7.60888 0.00925298ZM12.4293 12.3289C11.2462 13.5025 9.67317 14.1488 8.00001 14.1488C7.02031 14.1488 6.08235 13.9307 5.21209 13.5007L4.64949 13.2227L2.17261 13.8048L2.69398 11.2944L2.41681 10.756C1.96503 9.87837 1.73596 8.92936 1.73596 7.93534C1.73596 6.27567 2.38753 4.71537 3.57064 3.54178C4.74319 2.37871 6.34189 1.72189 8.00012 1.72189C9.67328 1.72192 11.2463 2.36822 12.4294 3.54174C13.6125 4.71529 14.2641 6.27559 14.2641 7.93523C14.2641 9.58009 13.6019 11.1659 12.4293 12.3289Z' fill='%23B6E0FE'/%3E%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 0C3.57861 0 0 3.578 0 8C0 9.4032 0.365967 10.7737 1.06091 11.9824L0.0301514 15.1833C-0.0417481 15.4065 0.017334 15.6511 0.183105 15.8169C0.34729 15.9811 0.591309 16.0424 0.81665 15.9698L4.01758 14.9391C5.22632 15.634 6.5968 16 8 16C12.4214 16 16 12.422 16 8C16 3.57861 12.422 0 8 0ZM8 14.75C6.73254 14.75 5.49707 14.3964 4.42712 13.7273C4.27319 13.6311 4.08203 13.6051 3.90417 13.6624L1.59351 14.4065L2.33765 12.0958C2.39404 11.9205 2.37024 11.7291 2.27258 11.5729C1.60364 10.5029 1.25 9.26746 1.25 8C1.25 4.27808 4.27808 1.25 8 1.25C11.7219 1.25 14.75 4.27808 14.75 8C14.75 11.7219 11.7219 14.75 8 14.75ZM8.78125 8C8.78125 8.4314 8.43152 8.78125 8 8.78125C7.56848 8.78125 7.21875 8.4314 7.21875 8C7.21875 7.56848 7.56848 7.21875 8 7.21875C8.43152 7.21875 8.78125 7.56848 8.78125 8ZM11.9062 8C11.9062 8.4314 11.5565 8.78125 11.125 8.78125C10.6935 8.78125 10.3438 8.4314 10.3438 8C10.3438 7.56848 10.6935 7.21875 11.125 7.21875C11.5565 7.21875 11.9062 7.56848 11.9062 8ZM5.65625 8C5.65625 8.4314 5.30652 8.78125 4.875 8.78125C4.4436 8.78125 4.09375 8.4314 4.09375 8C4.09375 7.56848 4.4436 7.21875 4.875 7.21875C5.30652 7.21875 5.65625 7.56848 5.65625 8Z' fill='%23B6E0FE'/%3E%3C/svg%3E%3C/svg%3E%0A");
-            }
+        &:first-of-type {
+            @include margin-top(4);
         }
     }
-
+    
+    p:before {
+        content: "";
+        height: 16px;
+        width: 16px;
+        display: inline-block;
+        margin-right: 8px;
+        margin-bottom: -2px;
+    }
+    
+    .tel:before {
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.7162 10.5022C13.7366 10.5022 12.7747 10.349 11.8633 10.0478C11.4167 9.89542 10.8676 10.0352 10.595 10.3151L8.796 11.6732C6.70963 10.5595 5.42446 9.27475 4.32596 7.20404L5.64408 5.45188C5.98654 5.10988 6.10938 4.61029 5.96221 4.14154C5.65971 3.22529 5.50604 2.26392 5.50604 1.28392C5.50608 0.575958 4.93013 0 4.22221 0H1.28387C0.575958 0 0 0.575958 0 1.28387C0 9.39846 6.60158 16 14.7162 16C15.4241 16 16 15.424 16 14.7161V11.786C16 11.0781 15.424 10.5022 14.7162 10.5022Z' fill='%23B6E0FE'/%3E%3C/svg%3E%0A");
+    }
+    
+    .wa:before {
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.60888 0.00925298C3.34886 0.210451 -0.0128861 3.72954 3.71346e-05 7.95991C0.00397198 9.24837 0.317564 10.4645 0.870757 11.5391L0.0214088 15.6286C-0.0245364 15.8498 0.176604 16.0435 0.398151 15.9915L4.43805 15.0421C5.47596 15.5549 6.64175 15.8511 7.87556 15.8698C12.2297 15.9357 15.8603 12.5064 15.996 8.18904C16.1415 3.56114 12.2908 -0.21192 7.60888 0.00925298ZM12.4293 12.3289C11.2462 13.5025 9.67317 14.1488 8.00001 14.1488C7.02031 14.1488 6.08235 13.9307 5.21209 13.5007L4.64949 13.2227L2.17261 13.8048L2.69398 11.2944L2.41681 10.756C1.96503 9.87837 1.73596 8.92936 1.73596 7.93534C1.73596 6.27567 2.38753 4.71537 3.57064 3.54178C4.74319 2.37871 6.34189 1.72189 8.00012 1.72189C9.67328 1.72192 11.2463 2.36822 12.4294 3.54174C13.6125 4.71529 14.2641 6.27559 14.2641 7.93523C14.2641 9.58009 13.6019 11.1659 12.4293 12.3289Z' fill='%23B6E0FE'/%3E%3Cpath d='M11.8829 9.65627L10.3333 9.21492C10.1296 9.15691 9.91023 9.21423 9.76178 9.36426L9.38284 9.74722C9.22306 9.9087 8.9806 9.96059 8.76912 9.87572C8.03608 9.58146 6.49408 8.22151 6.10029 7.54128C5.98668 7.34505 6.00547 7.09973 6.14496 6.92069L6.4758 6.49614C6.60542 6.3298 6.63277 6.10641 6.54705 5.91413L5.8951 4.45152C5.73894 4.1012 5.28763 3.99923 4.99278 4.24657C4.5603 4.6094 4.04715 5.16076 3.98477 5.77159C3.87479 6.84852 4.34041 8.20609 6.10118 9.83619C8.13534 11.7194 9.76429 11.9682 10.8249 11.7134C11.4265 11.5688 11.9072 10.9894 12.2106 10.515C12.4175 10.1916 12.2541 9.76199 11.8829 9.65627Z' fill='%23B6E0FE'/%3E%3C/svg%3E%0A"); 
+    }   
+    
+    .chatbot:before {
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.60888 0.00925298C3.34886 0.210451 -0.0128861 3.72954 3.71346e-05 7.95991C0.00397198 9.24837 0.317564 10.4645 0.870757 11.5391L0.0214088 15.6286C-0.0245364 15.8498 0.176604 16.0435 0.398151 15.9915L4.43805 15.0421C5.47596 15.5549 6.64175 15.8511 7.87556 15.8698C12.2297 15.9357 15.8603 12.5064 15.996 8.18904C16.1415 3.56114 12.2908 -0.21192 7.60888 0.00925298ZM12.4293 12.3289C11.2462 13.5025 9.67317 14.1488 8.00001 14.1488C7.02031 14.1488 6.08235 13.9307 5.21209 13.5007L4.64949 13.2227L2.17261 13.8048L2.69398 11.2944L2.41681 10.756C1.96503 9.87837 1.73596 8.92936 1.73596 7.93534C1.73596 6.27567 2.38753 4.71537 3.57064 3.54178C4.74319 2.37871 6.34189 1.72189 8.00012 1.72189C9.67328 1.72192 11.2463 2.36822 12.4294 3.54174C13.6125 4.71529 14.2641 6.27559 14.2641 7.93523C14.2641 9.58009 13.6019 11.1659 12.4293 12.3289Z' fill='%23B6E0FE'/%3E%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 0C3.57861 0 0 3.578 0 8C0 9.4032 0.365967 10.7737 1.06091 11.9824L0.0301514 15.1833C-0.0417481 15.4065 0.017334 15.6511 0.183105 15.8169C0.34729 15.9811 0.591309 16.0424 0.81665 15.9698L4.01758 14.9391C5.22632 15.634 6.5968 16 8 16C12.4214 16 16 12.422 16 8C16 3.57861 12.422 0 8 0ZM8 14.75C6.73254 14.75 5.49707 14.3964 4.42712 13.7273C4.27319 13.6311 4.08203 13.6051 3.90417 13.6624L1.59351 14.4065L2.33765 12.0958C2.39404 11.9205 2.37024 11.7291 2.27258 11.5729C1.60364 10.5029 1.25 9.26746 1.25 8C1.25 4.27808 4.27808 1.25 8 1.25C11.7219 1.25 14.75 4.27808 14.75 8C14.75 11.7219 11.7219 14.75 8 14.75ZM8.78125 8C8.78125 8.4314 8.43152 8.78125 8 8.78125C7.56848 8.78125 7.21875 8.4314 7.21875 8C7.21875 7.56848 7.56848 7.21875 8 7.21875C8.43152 7.21875 8.78125 7.56848 8.78125 8ZM11.9062 8C11.9062 8.4314 11.5565 8.78125 11.125 8.78125C10.6935 8.78125 10.3438 8.4314 10.3438 8C10.3438 7.56848 10.6935 7.21875 11.125 7.21875C11.5565 7.21875 11.9062 7.56848 11.9062 8ZM5.65625 8C5.65625 8.4314 5.30652 8.78125 4.875 8.78125C4.4436 8.78125 4.09375 8.4314 4.09375 8C4.09375 7.56848 4.4436 7.21875 4.875 7.21875C5.30652 7.21875 5.65625 7.56848 5.65625 8Z' fill='%23B6E0FE'/%3E%3C/svg%3E%3C/svg%3E%0A");
+    }
 }
 
 form {
-    padding-top: map-get($spacing , 8 ); 
-    padding-right: map-get($spacing , 10 ); 
-    padding-bottom: map-get($spacing , 8 ); 
-    padding-left: map-get($spacing , 8 ); 
+    padding: map-get($spacing, 5) map-get($spacing, 3);
+    padding: 5vh 5vw;
+    margin: auto;
+    max-width: map-get($spacing, 13);
     background-color: $color__neutral-050;
-    border-radius: 0 8px 8px 0;
-    max-width: 822px;
+    border-radius: 8px;
 }
-
-div.wpforms-container-full {
-    margin-bottom: 0;
     
-    .wpforms-form {
-        .wpforms-field-label {
-            font-weight: 400;
-            color: $color__neutral-700;
-            margin: 0;
-            padding-left: 2px;
-            line-height: 1.5;
+@include media ("screen", ">desktop") {
+    div.wpforms-container-full {
+        .wpforms-field-container:before {
+            content: none;
         }
+    }
+    
+    .form-description {
+        display: block;
+    }
 
-        .wpforms-required-label {
-            color: $color__error;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        textarea,
-        select
-        {
-            height: 60px;
-            border: solid 1px $color__neutral-200;
-            border-radius: 4px;
-            padding: 14px 24px;
-            @include font-size(1.25);
-            line-height: 1.5;
-
-            &:focus{
-                border-width: 2px;
-                border: solid 4px $color__primary-500;
-
-            }
-        }
+    .two-section-form > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0;
+        grid-template-areas: "sidebar form";
         
-        textarea { 
-            min-height: 160px;
-            min-width: 433px;
-            max-width: 683px;
-            max-height: 350px;
-            // resize: vertical;
+        .wpforms-container-full {
+            grid-area: form;
         }
 
-        select {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;       /* Remove default arrow */
-            background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%239FB3C8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");      /* Add custom arrow */
-            background-repeat: no-repeat;
-            background-attachment: scroll;
-            background-size: 16px 18px;
-            background-position: 96% 55%;
-            cursor: auto;
-        }
-
-        label.wpforms-error {
-            color: $color__error;
-            font-size: 16px;
-            text-align: right;
-        }
-
-        .wpforms-field input.wpforms-error,
-        .wpforms-field textarea.wpforms-error {
-            border: solid 2px $color__error;
-        }
-
-        .terms-and-condition {
-            padding: 60px 0 0 0;
-        }
-
-        button[type="submit"] {
-            background-color: $color__primary-700;
-            padding: 12px 36px;
-            font-size: 24px;
-            line-height: 1.5;
-            color: white;
-            border-radius: 4px;
-
-            &:hover {
-                background-color: $color__primary-900;
+        .side-form.left {
+            background-color: $color__primary-500;
+            width: 100%;
+            padding: 96px 48px 96px 48px;
+            border-radius: 8px 0 0 8px;
+            grid-area: sidebar;
+            
+            h3 {
+                margin: 0;
+                line-height: 1.33;
             }
+            
+            p {
+                margin: 0;
+                margin-top: 16px;
+            }
+            
+            p,
+            h3,
+            h4,
+            a {
+                color: $color__neutral-050;
+            }
+            
+            & > div {
+                display: grid;
+                grid-template-rows: 1fr min-content;
+                justify-content: space-around;
+                height: 100%;
+            }
+            
+            
         }
+    }
+
+    form {
+        padding:    map-get($spacing, 8)
+                    map-get($spacing, 10)
+                    map-get($spacing , 8 )
+                    map-get($spacing , 8 );
+        background-color: $color__neutral-050;
+        border-radius: 0 8px 8px 0;
+        max-width: 822px;
+    }
+
+    textarea { 
+        resize: both;
+        min-height: 160px;
+        min-width: 433px;
+        max-width: 683px;
+        max-height: 350px;
     }
 }

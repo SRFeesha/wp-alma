@@ -1,33 +1,101 @@
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
-textarea {
-	color: $color__text-input;
-	border: 1px solid $color__border-input;
-	border-radius: 3px;
-	padding: 3px;
+// input[type="text"],
+// input[type="email"],
+// input[type="url"],
+// input[type="password"],
+// input[type="search"],
+// input[type="number"],
+// input[type="tel"],
+// input[type="range"],
+// input[type="date"],
+// input[type="month"],
+// input[type="week"],
+// input[type="time"],
+// input[type="datetime"],
+// input[type="datetime-local"],
+// input[type="color"],
+// textarea {
+// 	color: $color__text-input;
+// 	border: 1px solid $color__border-input;
+// 	border-radius: 3px;
+// 	padding: 3px;
 
-	&:focus {
-		color: $color__text-input-focus;
+// 	&:focus {
+// 		color: $color__text-input-focus;
+// 	}
+// }
+
+// select {
+// 	border: 1px solid $color__border-input;
+// }
+
+// textarea {
+// 	width: 100%;
+// }
+
+
+div.wpforms-container-full {
+    margin-bottom: 0;
+    
+    .wpforms-form {
+		.wpforms-field-label {
+			font-weight: 400;
+			color: $color__neutral-700;
+			margin: 0;
+			padding-left: 2px;
+			line-height: 1.5;
+		}
+
+		.wpforms-required-label {
+			color: $color__error;
+		}
+
+		input[type="text"],
+		input[type="email"],
+		textarea,
+		select {
+			height: 60px;
+			border: solid 1px $color__neutral-200;
+			border-radius: 4px;
+			padding: 14px 24px;
+			@include font-size(1.25);
+			line-height: 1.5;
+
+			&:focus{
+				border-width: 2px;
+				border: solid 4px $color__primary-500;
+
+			}
+		}
+
+		textarea { 
+			resize: none;
+		}
+
+		select {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;       /* Remove default arrow */
+			background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%239FB3C8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");      /* Add custom arrow */
+			background-repeat: no-repeat;
+			background-attachment: scroll;
+			background-size: 16px 18px;
+			background-position: 96% 55%;
+			cursor: auto;
+		}
+
+		label.wpforms-error {
+			color: $color__error;
+			font-size: 16px;
+			text-align: right;
+		}
+
+		.wpforms-field input.wpforms-error,
+		.wpforms-field textarea.wpforms-error {
+			border: solid 2px $color__error;
+		}
+
+		.terms-and-condition {
+			padding: 60px 0 0 0;
+		}
 	}
-}
-
-select {
-	border: 1px solid $color__border-input;
-}
-
-textarea {
-	width: 100%;
 }

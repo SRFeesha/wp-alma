@@ -19,6 +19,10 @@
         color: $color__neutral-700;
     }
 
+    li.menu-item a:after {
+        content: none;
+    }
+
     a:hover {
         color: $color__primary-700;
     }
@@ -44,6 +48,14 @@
     .site-footer > .container-footer {
         margin-left: 48px;
         width: auto;
+        @include margin-top(9);
+        
+        .footer-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: .5rem;
+            @include margin-top(7);
+        }
     }
 
     .footer-down > ul {

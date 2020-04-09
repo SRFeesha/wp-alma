@@ -3,8 +3,22 @@
     padding: 3rem 0 4rem 0;
 }
 
+.trippy-line {
+    position: absolute;
+    top: -45vh;
+    right: -80vw;
+    width: 110vw;
+    // height: auto;
+    z-index: -1;
+    // transform: rotate(90deg);
+}
+
 @include media("screen", "<phone") {
     .pattern-bg {
         background: none;
+    }
+
+    .trippy-line {
+    display: none;
     }
 }

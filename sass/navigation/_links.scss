@@ -29,6 +29,7 @@ a {
 	color: $color__primary-700;
 
 	&[href*="//"]:not([href*="192.168.64.2/"]):after {
+	// &[href*="//"]:not([href*="almadigital.it"]):after {
 		content: " ";
 		margin: 0 0 -2px 4px;
 		display: inline-block;

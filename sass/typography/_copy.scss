@@ -53,13 +53,15 @@ p {
 }
 
 .big,
-.has-big-font-size {
+.has-big-font-size,
+.has-big-font-size p {
 	@include font-size(1.25);
 	@include fluid-font(3vw, 18px, 20px, 20px);
 }
 
 .bigger,
-.has-bigger-font-size {
+.has-bigger-font-size,
+.has-bigger-font-size p {
 	@include font-size(1.5);
 	// line-height: 1.5;
 	@include fluid-font(3.5vw, 20px, 24px, 24px);
@@ -76,12 +78,14 @@ p {
 
 @include media("screen", "<phone"){
 	.big,
-	.has-big-font-size {
+	.has-big-font-size,
+	.has-big-font-size p {
 		line-height: 1.3333;
 	}
 
 	.bigger,
-	.has-bigger-font-size {
+	.has-bigger-font-size,
+	.has-bigger-font-size p {
 		line-height: 1.6;
 	}
 }

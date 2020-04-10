@@ -840,19 +840,36 @@ table {
   padding: 3rem 0 4rem 0;
 }
 
-.trippy-line {
+.decoration {
+  position: absolute;
+  z-index: -1;
+}
+
+#trippy-line {
   position: absolute;
   top: -45vh;
   right: -80vw;
   width: 110vw;
-  z-index: -1;
+}
+
+#pong {
+  top: 1200px;
+  right: -124px;
+  width: 600px;
+}
+
+#elmo {
+  bottom: 300px;
+  height: 30vh;
+  top: 2700px;
+  left: 30px;
 }
 
 @media only screen and (max-width: 480px) {
   .pattern-bg {
     background: none;
   }
-  .trippy-line {
+  .decoration {
     display: none;
   }
 }
@@ -2726,10 +2743,6 @@ body.lock-scroll {
     margin-left: auto;
     margin-right: auto;
   }
-}
-
-.components-base-control .components-base-control__label {
-  font-weight: 600;
 }
 
 /*--------------------------------------------------------------

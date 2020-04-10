@@ -15,3 +15,7 @@ blockquote.is-style-alma-quote p:first-child:before {
     top: -108px;
 }
 
+/* for the editor of case-study-intro on lazyblocks */
+.components-base-control .components-base-control__label {
+    font-weight: 600;
+}

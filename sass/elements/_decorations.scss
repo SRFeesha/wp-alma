@@ -3,14 +3,29 @@
     padding: 3rem 0 4rem 0;
 }
 
-.trippy-line {
+.decoration {
+    position: absolute;
+    z-index: -1;
+}
+
+#trippy-line {
     position: absolute;
     top: -45vh;
     right: -80vw;
     width: 110vw;
-    // height: auto;
-    z-index: -1;
-    // transform: rotate(90deg);
+  }
+  
+#pong {
+top: 1200px;
+    right: -124px;
+    width: 600px;
+}
+
+#elmo {
+    bottom: 300px;
+    height: 30vh;
+    top: 2700px;
+    left: 30px;
 }
 
 @include media("screen", "<phone") {
@@ -18,7 +33,7 @@
         background: none;
     }
 
-    .trippy-line {
+    .decoration {
     display: none;
     }
 }

@@ -1,6 +1,8 @@
 .site-footer{
     justify-items: left;
     border-top: solid 2px $color__neutral-050;
+    position: relative;
+    background-color: white;
     @include margin-top(9);
 
     ul {

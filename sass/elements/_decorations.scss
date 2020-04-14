@@ -6,27 +6,25 @@
 .decoration {
     position: absolute;
     z-index: -1;
-}
-
-#trippy-line {
-    position: absolute;
-    top: -45vh;
-    right: -80vw;
-    width: 110vw;
   }
   
-#pong {
-top: 1200px;
-    right: -124px;
-    width: 600px;
-}
-
-#elmo {
-    bottom: 300px;
-    height: 30vh;
-    top: 2700px;
-    left: 30px;
-}
+  #trippy-line {
+      top: 480px;
+      left: 1008px;
+  }
+  
+  #kandiskij {
+      top: 250px;
+      right: 192px;
+      width: 283px;
+      opacity: 0.7;
+  }
+  
+  #ball {
+      top: -161px;
+      height: 300px;
+      left: -120px;
+  }
 
 @include media("screen", "<phone") {
     .pattern-bg {

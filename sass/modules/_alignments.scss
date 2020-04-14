@@ -103,17 +103,34 @@
 	}
 }
 
-// so we don't have to write col-x twelve time
+// so we don't have to write margin-top-x twelve time
 @for $i from 0 through 15 {
 	.margin-top-#{$i} {
 		@include margin-top($i);
 	}
 }
 
+@include media("screen", "<phone") {
+	@for $i from 0 through 15 {
+		.sm--margin-top-#{$i} {
+			@include margin-top($i);
+		}
+	}
+
+	.sm--center-text {
+		text-align: center;
+	}
+}
+
+
 #come-lavoriamo{
 	div{
 		height: min-content;
 	}
+}
+
+#Cosa-facciamo {
+	position: relative;
 }
 
 #headline {
@@ -125,7 +142,7 @@
 			// font-size: 48px;
 			@include font-size(3);
 			line-height: 1.33;
-			color: $color__primary-900
+			color: $color__primary-900;
 		}
 		h3 {
 			grid-column-start: 3;

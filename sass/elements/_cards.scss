@@ -1,23 +1,25 @@
-// ********
-// CHI SIAMO
-// ********
+.card-link {
+    text-decoration: none;
+    height: 100%;
+}
 
 .card {
     display: grid;
     padding-left: map-get($map: $spacing, $key: 6);
-    border: 2px solid $color__neutral-100;
+    border: 2px solid $color__primary-700;
     border-radius: 4px;
     background-color: white;
     overflow: hidden;
     transition: all 300ms;
 }
 
-.card-link {
-    text-decoration: none;
-    height: 100%;
-    // width: 100%;   
 
-    &:hover .card{
+@include media("screen", ">tablet") {
+    .card {
+        border-color: $color__neutral-100;
+    }
+
+    .card-link:hover .card{
         border-color: $color__primary-700;
         transform: translateY(-8px);
 
@@ -27,6 +29,7 @@
         }
     }
 }
+
 
 // card img??
 
@@ -123,38 +126,19 @@
 // BLOG
 // ********
 
-// tags
-.entry-meta {
-    display: grid;
-    grid-template-columns: 4fr 6fr;
-    grid-gap: 1em;
 
-    span:before{    
-        content: '';
-        display: inline-block;
-        height: 16px;
-        width: 16px;
-        margin-right: 8px;
-        margin-bottom: -2px;
-    }
-
-    .cat-links:before {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='icon-folder'%3E%3Cg%3E%3Cpath class='primary' d='M22 10H2V6c0-1.1.9-2 2-2h7l2 2h7a2 2 0 0 1 2 2v2z' fill='%23143d6b' /%3E%3Crect width='20' height='12' x='2' y='8' class='secondary' fill='%23829ab1' rx='2'/%3E%3C/g%3E%3C/svg%3E");
-    }
-
-    .posted-on:before {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='icon-time'%3E%3Ccircle cx='12' cy='12' r='10' class='primary' fill='%2390a4bb' /%3E%3Cpath class='secondary' fill='%23143d6b' d='M13 11.59l3.2 3.2a1 1 0 0 1-1.4 1.42l-3.5-3.5A1 1 0 0 1 11 12V7a1 1 0 0 1 2 0v4.59z'/%3E%3C/svg%3E");
-    }
-}
 
 .card-blog-post {
-    grid-template-rows: 17rem 0.625rem 6rem;
-    grid-gap: 1rem;
+    grid-template-rows: 17rem 2.5rem 6.5rem;
+    grid-template-columns: 100%;
     padding: 0 0 1.5rem 0;
+    // grid-gap: 1rem;
+    max-width: 376px;
 
     .post-thumbnail > img.wp-post-image,
     img {
-        object-fit: fill;
+        // object-fit: fill;
+        object-fit: cover;
         width: 100%;
         height: 100%;
         border-radius: 2px 2px 0 0;
@@ -162,7 +146,7 @@
     }
 
     &.card > h3 {
-        padding: 0 1rem;
+        padding: .5rem 1rem 0;
         color: $color__neutral-700;
         position: relative;
         overflow: hidden;
@@ -182,28 +166,59 @@
     }
 
     .entry-meta {
-        padding: 0 1rem;
+        display: inline-block;
+        padding: 1rem 1rem 0;
         font-weight: 400;
-        
-        > span {
-            text-overflow: ellipsis;
+
+        span {
+            display: inline-block;
+            // overflow-x: hidden;
+            // text-overflow: ellipsis;
             white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+
+            &.cat-links {
+                max-width: 65%;
+                // Overflow
+                &:after{
+                    content: "";
+                    text-align: right;
+                    position: absolute;
+                    bottom: 0;
+                    left: 11rem;
+                    width: 25%;
+                    height: 1.5rem;
+                    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 100%);
+                    z-index: 1;
+                }
+            }
+
+            &.posted-on {
+                max-width: 35%;
+                margin-left: 5%;
+                // text-align: right;
+                z-index: 2;
+            }
         }
+    }
+}
+
+// Related posts 
+.related-posts {
+    display: grid;
+    grid-column-end: 3;
+    grid-column-start: 1;
+    grid-template-columns: repeat(3, minmax(150px, 438px));;
+    grid-gap: 24px 16px;
+
+    & > h3 {
+        grid-column-start: span 3;
     }
 }
 
 
 @include media("screen", "<phone") {
-    .card-link:hover .card{
-        border-color: $color__neutral-100;
-        // transform: none;
-
-        h2,
-        h3 {
-            color: inherit;
-        }
-    }
-
     .card-team-member {
         grid-template-rows: 1fr min-content;
         grid-template-columns: 100%;
@@ -249,6 +264,11 @@
         }
     }
 
+    .blog-post-grid {
+        grid-template-columns: 100%;
+        grid-auto-flow: row;
+        row-gap: map-get($map: $spacing, $key: 7 );
+    }
 
     .card-certificate {
         // here there is a problem: .card-certificate is under horizontal-slider and horizontal slider has a grid with a gap of 4rem. Horizontal slider is used also in other instances — so changing the dispaly to block will lead to other hard fixes. I like to make a trick just for card-certificate than tricks every other instances in order to accomodate card-container. I don't want that much spacing between items in card-certificate for mobile. What I do is put the height to 0 so that the actual spacing between items 4rem-height of the title (2.75rem)
@@ -267,5 +287,21 @@
             display: none;
         }
 
+    }
+
+    .related-posts {
+        display: block;
+
+        .card {
+            @include margin-top(7);
+
+            &:first-child {
+                @include margin-top(4);
+            }
+
+            > h3 {
+                margin: 0;
+            }
+        }
     }
 }

@@ -16,8 +16,8 @@
 			?>
 			<div class="entry-meta margin-top-8">
 				<?php
-				alma_wp_posted_on();
 				alma_wp_get_post_category();
+				alma_wp_posted_on();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif;

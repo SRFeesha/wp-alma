@@ -13,3 +13,23 @@
     border-radius: 4px;
     color: $color__neutral-700;
 }
+
+// Category and date posted of a blog post
+.entry-meta {
+    span:before{    
+        content: '';
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        margin-right: 8px;
+        margin-bottom: -2px;
+    }
+
+    .cat-links:before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='icon-folder'%3E%3Cg%3E%3Cpath class='primary' d='M22 10H2V6c0-1.1.9-2 2-2h7l2 2h7a2 2 0 0 1 2 2v2z' fill='%23143d6b' /%3E%3Crect width='20' height='12' x='2' y='8' class='secondary' fill='%23829ab1' rx='2'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .posted-on:before {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='icon-time'%3E%3Ccircle cx='12' cy='12' r='10' class='primary' fill='%2390a4bb' /%3E%3Cpath class='secondary' fill='%23143d6b' d='M13 11.59l3.2 3.2a1 1 0 0 1-1.4 1.42l-3.5-3.5A1 1 0 0 1 11 12V7a1 1 0 0 1 2 0v4.59z'/%3E%3C/svg%3E");
+    }
+}

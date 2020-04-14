@@ -17,7 +17,8 @@ h2 {
 	@include fluid-font(4vw, 24px, 36px, 32px);
 	line-height: 1.33;
 	font-weight: 600;
-	color: $color__neutral-700;
+	// color: $color__neutral-700;
+	color: $color__primary-400; //contrast is ok if >18px
 }
 
 h3{

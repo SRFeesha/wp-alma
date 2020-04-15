@@ -20,6 +20,13 @@ body.lock-scroll {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	// max-height: 80px;
+	a {
+		background: none;
+
+		&:visited {
+			color: $color__primary-700;
+		}
+	}
 }
 
 .site-branding {
@@ -53,10 +60,6 @@ body.lock-scroll {
 
 			&:last-child{
 				margin-left: auto;
-			}
-
-			a:visited {
-				color: $color__primary-700;
 			}
 		}
 	}

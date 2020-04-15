@@ -2,7 +2,8 @@
     justify-items: left;
     border-top: solid 2px $color__neutral-050;
     position: relative;
-    background-color: white;
+    // background-color: white;
+    background-color: $color__neutral-050;
     @include margin-top(9);
 
     ul {
@@ -15,18 +16,8 @@
         }
     }
 
-    a,
-    a:visited{
-        text-decoration: none;
-        color: $color__neutral-700;
-    }
-
     li.menu-item a:after {
         content: none;
-    }
-
-    a:hover {
-        color: $color__primary-700;
     }
 
     .footer-title {

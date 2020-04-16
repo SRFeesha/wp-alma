@@ -9,6 +9,7 @@
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	grid-gap: 1rem;
+	
 	& > * {
 		margin-left: 0;
 		margin-right: 0;
@@ -93,7 +94,6 @@
 			grid-column-end: initial;
 		}
 	}
-
 }
 
 // so we don't have to write col-x twelve time

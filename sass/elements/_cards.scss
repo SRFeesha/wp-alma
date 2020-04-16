@@ -180,6 +180,7 @@
 
             &.cat-links {
                 max-width: 65%;
+
                 // Overflow
                 &:after{
                     content: "";
@@ -197,7 +198,6 @@
             &.posted-on {
                 max-width: 35%;
                 margin-left: 5%;
-                // text-align: right;
                 z-index: 2;
             }
         }

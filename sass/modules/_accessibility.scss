@@ -36,3 +36,11 @@
 #content[tabindex="-1"]:focus {
 	outline: 0;
 }
+
+::selection {
+	background: #DCEEFB;
+}
+
+::-moz-selection { 
+	background: #DCEEFB;
+}

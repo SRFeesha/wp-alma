@@ -264,12 +264,6 @@
         }
     }
 
-    .blog-post-grid {
-        grid-template-columns: 100%;
-        grid-auto-flow: row;
-        row-gap: map-get($map: $spacing, $key: 7 );
-    }
-
     .card-certificate {
         // here there is a problem: .card-certificate is under horizontal-slider and horizontal slider has a grid with a gap of 4rem. Horizontal slider is used also in other instances — so changing the dispaly to block will lead to other hard fixes. I like to make a trick just for card-certificate than tricks every other instances in order to accomodate card-container. I don't want that much spacing between items in card-certificate for mobile. What I do is put the height to 0 so that the actual spacing between items 4rem-height of the title (2.75rem)
         width: 100%;

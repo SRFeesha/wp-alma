@@ -160,4 +160,10 @@
             display: block;
         }
     }
+    
+    .blog-post-grid {
+        grid-template-columns: 100%;
+        grid-auto-flow: row;
+        row-gap: map-get($map: $spacing, $key: 7 );
+    }
 }

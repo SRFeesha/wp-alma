@@ -169,30 +169,30 @@
         display: inline-block;
         padding: 1rem 1rem 0;
         font-weight: 400;
+        position: relative;
+        
+        // Overflow for the category name
+        // I'll put this here so it kicks in just when the category name occupy the 55% of the card (z-index 1 to prevent it goes on the date)
+        &:after{
+            content: "";
+            text-align: right;
+            position: absolute;
+            bottom: 0;
+            left: 55%;
+            width: 5%;
+            height: 1.5rem;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 100%);
+            z-index: 1;
+        }
 
         span {
             display: inline-block;
-            // overflow-x: hidden;
-            // text-overflow: ellipsis;
             white-space: nowrap;
             position: relative;
             overflow: hidden;
 
             &.cat-links {
-                max-width: 65%;
-
-                // Overflow
-                &:after{
-                    content: "";
-                    text-align: right;
-                    position: absolute;
-                    bottom: 0;
-                    left: 11rem;
-                    width: 25%;
-                    height: 1.5rem;
-                    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 100%);
-                    z-index: 1;
-                }
+                max-width: 60%;
             }
 
             &.posted-on {

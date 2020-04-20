@@ -9,7 +9,6 @@ div.wpforms-container-full {
         content: "Iniziamo un progetto insieme!";
         font-size: 2rem;
         line-height: 1.1666;
-        color: green;
         text-align: center;
         font-style: italic;
         color: $color__primary-400;
@@ -63,12 +62,23 @@ div.wpforms-container-full {
 form {
     padding: map-get($spacing, 5) map-get($spacing, 3);
     padding: 5vh 5vw;
-    margin: auto;
+    // margin: auto;
     max-width: map-get($spacing, 13);
     background-color: $color__neutral-050;
     border-radius: 8px;
 }
+
+// Confirmation form
+[id^="wpforms-confirmation-"] {
+    padding: 6rem 3rem;
+    border-radius: .5rem;
     
+    p {
+        @include font-size(2);
+        margin-bottom: 3rem;
+    }
+}
+
 @include media("screen", ">phone", "<desktop") {
     .other-channels p{
         display: inline-block;
@@ -83,15 +93,19 @@ form {
         }
     }
     
+    div.wpforms-container-full{
+        margin: 0;
+    }
+
     .form-description {
         display: block;
     }
 
     .two-section-form > div {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 0;
-        grid-template-areas: "sidebar form";
+        grid-template-areas: "sidebar form form";
         
         .wpforms-container-full {
             grid-area: form;
@@ -114,10 +128,7 @@ form {
                 margin-top: 16px;
             }
             
-            p,
-            h3,
-            h4,
-            a {
+            p, h3, h4, a {
                 color: $color__neutral-050;
             }
             
@@ -164,5 +175,13 @@ form {
         .chatbot:before {
             background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.60888 0.00925298C3.34886 0.210451 -0.0128861 3.72954 3.71346e-05 7.95991C0.00397198 9.24837 0.317564 10.4645 0.870757 11.5391L0.0214088 15.6286C-0.0245364 15.8498 0.176604 16.0435 0.398151 15.9915L4.43805 15.0421C5.47596 15.5549 6.64175 15.8511 7.87556 15.8698C12.2297 15.9357 15.8603 12.5064 15.996 8.18904C16.1415 3.56114 12.2908 -0.21192 7.60888 0.00925298ZM12.4293 12.3289C11.2462 13.5025 9.67317 14.1488 8.00001 14.1488C7.02031 14.1488 6.08235 13.9307 5.21209 13.5007L4.64949 13.2227L2.17261 13.8048L2.69398 11.2944L2.41681 10.756C1.96503 9.87837 1.73596 8.92936 1.73596 7.93534C1.73596 6.27567 2.38753 4.71537 3.57064 3.54178C4.74319 2.37871 6.34189 1.72189 8.00012 1.72189C9.67328 1.72192 11.2463 2.36822 12.4294 3.54174C13.6125 4.71529 14.2641 6.27559 14.2641 7.93523C14.2641 9.58009 13.6019 11.1659 12.4293 12.3289Z' fill='%23B6E0FE'/%3E%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 0C3.57861 0 0 3.578 0 8C0 9.4032 0.365967 10.7737 1.06091 11.9824L0.0301514 15.1833C-0.0417481 15.4065 0.017334 15.6511 0.183105 15.8169C0.34729 15.9811 0.591309 16.0424 0.81665 15.9698L4.01758 14.9391C5.22632 15.634 6.5968 16 8 16C12.4214 16 16 12.422 16 8C16 3.57861 12.422 0 8 0ZM8 14.75C6.73254 14.75 5.49707 14.3964 4.42712 13.7273C4.27319 13.6311 4.08203 13.6051 3.90417 13.6624L1.59351 14.4065L2.33765 12.0958C2.39404 11.9205 2.37024 11.7291 2.27258 11.5729C1.60364 10.5029 1.25 9.26746 1.25 8C1.25 4.27808 4.27808 1.25 8 1.25C11.7219 1.25 14.75 4.27808 14.75 8C14.75 11.7219 11.7219 14.75 8 14.75ZM8.78125 8C8.78125 8.4314 8.43152 8.78125 8 8.78125C7.56848 8.78125 7.21875 8.4314 7.21875 8C7.21875 7.56848 7.56848 7.21875 8 7.21875C8.43152 7.21875 8.78125 7.56848 8.78125 8ZM11.9062 8C11.9062 8.4314 11.5565 8.78125 11.125 8.78125C10.6935 8.78125 10.3438 8.4314 10.3438 8C10.3438 7.56848 10.6935 7.21875 11.125 7.21875C11.5565 7.21875 11.9062 7.56848 11.9062 8ZM5.65625 8C5.65625 8.4314 5.30652 8.78125 4.875 8.78125C4.4436 8.78125 4.09375 8.4314 4.09375 8C4.09375 7.56848 4.4436 7.21875 4.875 7.21875C5.30652 7.21875 5.65625 7.56848 5.65625 8Z' fill='%23B6E0FE'/%3E%3C/svg%3E%3C/svg%3E%0A");
         }
+    }
+
+    // Confirmation form
+    [id^="wpforms-confirmation-"] {
+        padding: 6rem 12rem 6rem 6rem;    
+        border-radius: 0 8px 8px 0;
+        margin: 0;
+        grid-area: form;
     }
 }

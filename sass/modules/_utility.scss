@@ -2,3 +2,7 @@
     display: none !important;
 }
 
+.no-ext-link:after,
+.no-ext-link a:after {
+    content: none !important;
+}

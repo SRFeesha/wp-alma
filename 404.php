@@ -14,41 +14,19 @@ get_header();
 		<main id="main" class="site-main">
 
 			<section class="error-404 not-found">
+				<p class="giant-text" style="font-size:50vh;position:absolute;font-style:italic;top:-100px;color:#F0F4F8;z-index:-1;font-weight:600;text-align:right;width:100%">404</p>
 				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'alma-wp' ); ?></h1>
+					<h1 class="page-title margin-top-10"><?php esc_html_e( 'Whoops!', 'alma-wp' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'alma-wp' ); ?></p>
+					<h2 class="margin-top-2"><?php esc_html_e( 'Abbiamo perso questa pagina', 'alma-wp' ); ?></h2>
+					
+					<p class="has-text-color has-big-font-size has-gray-500-color sm--margin-top-3 width-37">Ci abbiamo provata, l'abbiamo cercata ovunque, ma niente, non si trova. </p>
 
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'alma-wp' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$alma_wp_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'alma-wp' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$alma_wp_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
+					<div class="margin-top-6 has-bigger-font-size" style="display:inline-block;">
+						<p>Hai già visto i <a href="https://almadigital.it/progetti/">nostri progetti</a> ?</p>
+					</div>
 
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->

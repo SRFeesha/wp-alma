@@ -28,6 +28,12 @@
         cursor: pointer;
     }
 
+    div > a:first-child,
+    [class^="wp-block-lazyblock"]:first-child,
+    .wp-block-group:first-child {
+        margin-left: calc( ((100vw - 1168px) / 2) - 32px);
+    }
+
     & > div{
         display: grid;
         grid-auto-flow: column;

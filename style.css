@@ -489,6 +489,7 @@ h4 {
   h3 {
     line-height: 1.25;
     font-weight: 800;
+    letter-spacing: 0.8px;
   }
   h4 {
     line-height: 1.428571;
@@ -1032,6 +1033,20 @@ table {
   display: inline-block;
   padding: 1rem 1rem 0;
   font-weight: 400;
+  position: relative;
+}
+
+.card-blog-post .entry-meta:after {
+  content: "";
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  left: 55%;
+  width: 5%;
+  height: 1.5rem;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(white));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white 100%);
+  z-index: 1;
 }
 
 .card-blog-post .entry-meta span {
@@ -1042,20 +1057,7 @@ table {
 }
 
 .card-blog-post .entry-meta span.cat-links {
-  max-width: 65%;
-}
-
-.card-blog-post .entry-meta span.cat-links:after {
-  content: "";
-  text-align: right;
-  position: absolute;
-  bottom: 0;
-  left: 11rem;
-  width: 25%;
-  height: 1.5rem;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(white));
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), white 100%);
-  z-index: 1;
+  max-width: 60%;
 }
 
 .card-blog-post .entry-meta span.posted-on {
@@ -1185,6 +1187,12 @@ table {
   -webkit-box-shadow: 0 0 0 white;
           box-shadow: 0 0 0 white;
   cursor: pointer;
+}
+
+.horizontal-slider div > a:first-child,
+.horizontal-slider [class^="wp-block-lazyblock"]:first-child,
+.horizontal-slider .wp-block-group:first-child {
+  margin-left: calc( ((100vw - 1168px) / 2) - 32px);
 }
 
 .horizontal-slider > div {
@@ -1459,6 +1467,8 @@ div.wpforms-container-full .wpforms-form select {
   font-size: 20px;
   font-size: 1.25rem;
   line-height: 1.5;
+  -webkit-transition: border cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.15s;
+  transition: border cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.15s;
 }
 
 div.wpforms-container-full .wpforms-form input[type="text"]:focus,
@@ -1510,7 +1520,6 @@ div.wpforms-container-full .wpforms-field-container:before {
   content: "Iniziamo un progetto insieme!";
   font-size: 2rem;
   line-height: 1.1666;
-  color: green;
   text-align: center;
   font-style: italic;
   color: #4098D7;
@@ -1563,10 +1572,20 @@ div.wpforms-container-full .wpforms-field-container:before {
 form {
   padding: 2rem 1rem;
   padding: 5vh 5vw;
-  margin: auto;
   max-width: 32rem;
   background-color: #F0F4F8;
   border-radius: 8px;
+}
+
+[id^="wpforms-confirmation-"] {
+  padding: 6rem 3rem;
+  border-radius: .5rem;
+}
+
+[id^="wpforms-confirmation-"] p {
+  font-size: 32px;
+  font-size: 2rem;
+  margin-bottom: 3rem;
 }
 
 @media only screen and (min-width: 481px) and (max-width: 1200px) {
@@ -1580,20 +1599,24 @@ form {
   div.wpforms-container-full .wpforms-field-container:before {
     content: none;
   }
+  div.wpforms-container-full {
+    margin: 0;
+  }
   .form-description {
     display: block;
   }
   .two-section-form > div {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 0;
-        grid-template-areas: "sidebar form";
+        grid-template-areas: "sidebar form form";
   }
   .two-section-form > div .wpforms-container-full {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
     grid-area: form;
   }
   .two-section-form > div .side-form.left {
@@ -1613,10 +1636,7 @@ form {
     margin: 0;
     margin-top: 16px;
   }
-  .two-section-form > div .side-form.left p,
-  .two-section-form > div .side-form.left h3,
-  .two-section-form > div .side-form.left h4,
-  .two-section-form > div .side-form.left a {
+  .two-section-form > div .side-form.left p, .two-section-form > div .side-form.left h3, .two-section-form > div .side-form.left h4, .two-section-form > div .side-form.left a {
     color: #F0F4F8;
   }
   .two-section-form > div .side-form.left > div {
@@ -1654,6 +1674,15 @@ form {
   .other-channels .chatbot:before {
     background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.60888 0.00925298C3.34886 0.210451 -0.0128861 3.72954 3.71346e-05 7.95991C0.00397198 9.24837 0.317564 10.4645 0.870757 11.5391L0.0214088 15.6286C-0.0245364 15.8498 0.176604 16.0435 0.398151 15.9915L4.43805 15.0421C5.47596 15.5549 6.64175 15.8511 7.87556 15.8698C12.2297 15.9357 15.8603 12.5064 15.996 8.18904C16.1415 3.56114 12.2908 -0.21192 7.60888 0.00925298ZM12.4293 12.3289C11.2462 13.5025 9.67317 14.1488 8.00001 14.1488C7.02031 14.1488 6.08235 13.9307 5.21209 13.5007L4.64949 13.2227L2.17261 13.8048L2.69398 11.2944L2.41681 10.756C1.96503 9.87837 1.73596 8.92936 1.73596 7.93534C1.73596 6.27567 2.38753 4.71537 3.57064 3.54178C4.74319 2.37871 6.34189 1.72189 8.00012 1.72189C9.67328 1.72192 11.2463 2.36822 12.4294 3.54174C13.6125 4.71529 14.2641 6.27559 14.2641 7.93523C14.2641 9.58009 13.6019 11.1659 12.4293 12.3289Z' fill='%23B6E0FE'/%3E%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 0C3.57861 0 0 3.578 0 8C0 9.4032 0.365967 10.7737 1.06091 11.9824L0.0301514 15.1833C-0.0417481 15.4065 0.017334 15.6511 0.183105 15.8169C0.34729 15.9811 0.591309 16.0424 0.81665 15.9698L4.01758 14.9391C5.22632 15.634 6.5968 16 8 16C12.4214 16 16 12.422 16 8C16 3.57861 12.422 0 8 0ZM8 14.75C6.73254 14.75 5.49707 14.3964 4.42712 13.7273C4.27319 13.6311 4.08203 13.6051 3.90417 13.6624L1.59351 14.4065L2.33765 12.0958C2.39404 11.9205 2.37024 11.7291 2.27258 11.5729C1.60364 10.5029 1.25 9.26746 1.25 8C1.25 4.27808 4.27808 1.25 8 1.25C11.7219 1.25 14.75 4.27808 14.75 8C14.75 11.7219 11.7219 14.75 8 14.75ZM8.78125 8C8.78125 8.4314 8.43152 8.78125 8 8.78125C7.56848 8.78125 7.21875 8.4314 7.21875 8C7.21875 7.56848 7.56848 7.21875 8 7.21875C8.43152 7.21875 8.78125 7.56848 8.78125 8ZM11.9062 8C11.9062 8.4314 11.5565 8.78125 11.125 8.78125C10.6935 8.78125 10.3438 8.4314 10.3438 8C10.3438 7.56848 10.6935 7.21875 11.125 7.21875C11.5565 7.21875 11.9062 7.56848 11.9062 8ZM5.65625 8C5.65625 8.4314 5.30652 8.78125 4.875 8.78125C4.4436 8.78125 4.09375 8.4314 4.09375 8C4.09375 7.56848 4.4436 7.21875 4.875 7.21875C5.30652 7.21875 5.65625 7.56848 5.65625 8Z' fill='%23B6E0FE'/%3E%3C/svg%3E%3C/svg%3E%0A");
   }
+  [id^="wpforms-confirmation-"] {
+    padding: 6rem 12rem 6rem 6rem;
+    border-radius: 0 8px 8px 0;
+    margin: 0;
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-area: form;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1685,7 +1714,7 @@ a {
 }
 
 a:visited {
-  color: #334E68;
+  color: #4098D7;
 }
 
 a:hover {
@@ -2647,6 +2676,18 @@ body.lock-scroll {
 }
 
 /*--------------------------------------------------------------
+# Utility
+--------------------------------------------------------------*/
+.hide-block {
+  display: none !important;
+}
+
+.no-ext-link:after,
+.no-ext-link a:after {
+  content: none !important;
+}
+
+/*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
 .widget {
@@ -2719,7 +2760,7 @@ body.lock-scroll {
 
 @media only screen and (max-width: 1200px) {
   .content-space {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
 }
 
@@ -2896,6 +2937,9 @@ body.lock-scroll {
   .case-study-intro h2,
   .case-study-intro h3,
   .case-study-intro h4 {
+    color: #003E6B;
+  }
+  .case-study-intro .intro h2 + div p {
     color: #003E6B;
   }
   aside > div {
@@ -3079,8 +3123,7 @@ body.lock-scroll {
   max-width: 600px;
 }
 
-.single-post .site-content figure,
-.single-post .site-content .attachment-post-thumbnail {
+.single-post .site-content figure, .single-post .site-content .attachment-post-thumbnail {
   margin: 3rem 0 4rem 0;
 }
 
@@ -3092,10 +3135,7 @@ body.lock-scroll {
   margin-bottom: 1.6em;
 }
 
-.single-post .site-content h1,
-.single-post .site-content h2,
-.single-post .site-content h3,
-.single-post .site-content h4 {
+.single-post .site-content h1, .single-post .site-content h2, .single-post .site-content h3, .single-post .site-content h4 {
   color: #003E6B;
   margin-bottom: .5rem;
 }
@@ -3121,8 +3161,7 @@ body.lock-scroll {
   margin-top: 3rem;
 }
 
-.single-post .site-content ul,
-.single-post .site-content ol {
+.single-post .site-content ul, .single-post .site-content ol {
   margin: -1rem 0 2rem 0;
   padding: 0;
 }
@@ -3175,11 +3214,52 @@ body.lock-scroll {
   .single-post .site-content {
     display: block;
   }
+  .single-post .site-content .post-thumbnail,
+  .single-post .site-content .wp-block-image {
+    width: calc( 100% + 3rem);
+    max-width: calc( 100% + 3rem);
+    margin-left: -1.5rem;
+  }
+  .single-post .site-content .post-thumbnail img,
+  .single-post .site-content .wp-block-image img {
+    border-radius: 0;
+  }
+  .single-post .site-content .wp-block-image figcaption {
+    margin-left: 1.5rem;
+  }
   .blog-post-grid {
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
     grid-auto-flow: row;
     row-gap: 4rem;
+  }
+  .share-button-wrapper {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+  .share-button-wrapper .share-button {
+    margin: 0;
+    border-color: #D9E2EC;
+  }
+  aside > .sidebar-container {
+    display: block;
+  }
+  .pagination {
+    margin-top: 3rem;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  .pagination .next, .pagination .prev {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .content-space.single-post {
+    padding: 0 1.5rem;
   }
 }
 

@@ -72,6 +72,8 @@ form {
 [id^="wpforms-confirmation-"] {
     padding: 6rem 3rem;
     border-radius: .5rem;
+    background-color: $color__neutral-050;
+    border:none; 
     
     p {
         @include font-size(2);

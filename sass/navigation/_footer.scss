@@ -20,6 +20,10 @@
         content: none;
     }
 
+    .container-footer {
+        position: relative;
+    }
+    
     .footer-title {
         @include margin-top(8);
         margin-bottom: 0;

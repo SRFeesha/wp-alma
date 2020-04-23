@@ -1,73 +1,83 @@
 /**
- * File skip-link-focus-fix.js.
+ * File horizontal-slider.js.
  *
- * Helps with accessibility for keyboard only users.
- *
- * Learn more: https://git.io/vWdr2
+ * Add accessibility cues to scroll inside a horizontal slider.
  */
+
 ( function() {
-	// var hs = document.querySelectorAll(".horizontal-slider")[0];
-	// // var view = document.querySelectorAll(".horizontal-slider .container")[0];
-	// var totalWidth = hs.scrollWidth;
-	// var clientWidth = hs.clientWidth;
-	// var move = 500;
-	// var sliderLimit = clientWidth;
-	// var actualPosition = clientWidth + hs.scrollLeft;
-
-	// console.log("Total: " + totalWidth);
-	// console.log("Client: " + clientWidth);
-	// console.log("Percentuale visibile: " + clientWidth / totalWidth);
-
-	// var rightArrow = document.createElement("div");
-	// hs.appendChild(rightArrow); 
-	// rightArrow.innerHTML = "→";
-	// rightArrow.classList.add("arrow", "right-arrow");
-	// // console.log(view);
-	// // hs = view;
-
-	// function moveRight(){    
-	// 	console.log("Prima: " + actualPosition);
-	// 	hs.scrollLeft += move;
-	// 	console.log("Dopo: " + (clientWidth + hs.scrollLeft));
-	// 	// if (currentPosition >= sliderLimit) view.stop(false,true).animate({left:"-="+move},{ duration: 400})
-	// };
+	let hs = 				document.querySelectorAll(".horizontal-slider")[0],
+		totalWidth = 		hs.scrollWidth,
+	 	clientWidth = 		hs.clientWidth,
+		distance = 			665, // !!! 400px is almost a card: 464 for portfolio and 664 for team but 384 for certificate  — d'oh!!
+	 	actualPosition =	clientWidth + hs.scrollLeft,
+		leftMargin =		((clientWidth - 1168) / 2) - 32,
+		rightArrow = 		document.createElement("div"),
+		leftArrow = 		document.createElement("div"),
+		scrolledPx = 		hs.scrollLeft,
+		hsNotVisible = 		totalWidth - clientWidth,
+		scrolledPercent = 	(scrolledPx / hsNotVisible) * 100,
+		ticking = 			false,
+		lastScrollLeft = 	0;
 	
-	// if (clientWidth == totalWidth){
-	// 	rightArrow.classList.add("greyed");
-	// }
-	// else {
-	// 	rightArrow.classList.remove("greyed");
-	// }
+	function show (el, show) {
+		show ? el.style.visibility = "hidden" : el.style.visibility = "visible";
+	}
+	
+	function manageArrow() {
+		scrolledPx = hs.scrollLeft;
+		hsNotVisible = totalWidth - clientWidth;
+		scrolledPercent = (scrolledPx / hsNotVisible) * 100;
+		console.log(scrolledPx);
 
-	// rightArrow.addEventListener('click', event => {
-	// 	moveRight()
-	// });
+		// enhance smoothness: the arrow disappear a little bit befor the end of the div
+		(scrolledPx >= hsNotVisible-16) ? show(rightArrow, true) : show(rightArrow, false); 
+		(scrolledPx <= leftMargin-64) ? show(leftArrow, true) : show(leftArrow, false); 
+	}
 
-	// // rightArrow.click(moveRight());
+	function sideScroll(direction, speed){
+		scrollAmount = 0;
+		let step = distance/5;
+		var slideTimer = setInterval(function(){
+			if(direction == 'left'){
+				hs.scrollLeft -= step;
+			} else {
+				hs.scrollLeft += step;
+			}
+			scrollAmount += step;
+			if(scrollAmount >= distance){
+				window.clearInterval(slideTimer);
+			}
+		}, speed);
+	}
 
 
+	hs.appendChild(rightArrow); 
+	rightArrow.innerHTML = "<span>→</span>";
+	rightArrow.classList.add("arrow", "arrow--right");
+	hs.appendChild(leftArrow); 
+	leftArrow.innerHTML = "<span>←</span>"
+	leftArrow.classList.add("arrow", "arrow--left");
 
-	// var slider = document.getElementsByClassName('.horizontal.slider')[0];
+	// Initial check — in case the user refreshed not in position 0
+	(scrolledPx >= hsNotVisible-16) ? show(rightArrow, true) : show(rightArrow, false); 
+	(scrolledPx <= leftMargin-64) ? show(leftArrow, true) : show(leftArrow, false); 
 
-	// // create a simple instance
-	// // by default, it only adds horizontal recognizers
-	// var mc = new Hammer(slider);
+	hs.addEventListener('scroll', function(e) {
+		lastScrollLeft = hs.scrollLeft;
 
-	// // listen to events...
-	// mc.on("panleft panright", function(ev) {
-	// 	if (ev)
-	// 	slider.textContent = ev.type +" gesture detected.";
-	// });
+		if (!ticking) {
+			// requestAnimationFrame reduce the repainting in the page
+			window.requestAnimationFrame(function() {
+				manageArrow();
+				ticking = false;
+			});
+
+			ticking = true;
+	   };
+	}) ;
+
+	rightArrow.addEventListener('click', function(){sideScroll('right', 25, distance)}, false);
+	leftArrow.addEventListener('click', function(){sideScroll('left', 25, distance)}, false);
 }
 )();
 
-
-
-
-
-// $("#leftArrow").click(function(){
-
-//     var currentPosition = parseInt(view.css("left"));
-//     if (currentPosition < 0) view.stop(false,true).animate({left:"+="+move},{ duration: 400})
-
-// });

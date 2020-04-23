@@ -4,47 +4,22 @@
     overflow-x: scroll;
     -ms-overflow-style: none;  /* Hide scrollbar in Internet Explorer 10+ */
     scrollbar-width: none;  /* Hide scrollbar in Firefox */
-    cursor: -webkit-grab; 
-    cursor: grab;
     position: relative;
 
     &::-webkit-scrollbar {
         display: none; /* Hide scrollbar in Safari and Chrome */
     }
 
-    .arrow.right-arrow {
-        content: "→";
-        display: inline-block;
-        font-size: 3rem;
-        background-color: white;
-        color: green;
-        position: sticky;
-        left: 92%;
-        bottom: 50%;
-        padding: 1rem;
-        border-radius: 50%;
-        border: solid 2px $color__neutral-200;
-        box-shadow: 0 0 0 white;
-        cursor: pointer;
+    .arrow {
+        display: none;
     }
-
-    div > a:first-child,
-    [class^="wp-block-lazyblock"]:first-child,
-    .wp-block-group:first-child {
-        margin-left: calc( ((100vw - 1168px) / 2) - 32px);
-    }
-
+    
     & > div{
         display: grid;
         grid-auto-flow: column;
         grid-auto-columns: min-content min-content;
         grid-gap: 2rem;
         // padding: 32px;
-
-        & > a:first-child {
-            //align first card with content
-            margin-left: calc( ((100vw - 1168px) / 2) - 32px ); 
-        }
 
         &:after {
             content: "";
@@ -53,26 +28,13 @@
     }
 }
 
-@include media("screen", "<phone") {
-    
-    // .horizontal-slider.full-width {
-	// 	margin: 0;
-	// 	grid-template-rows: 1fr;
-	// 	cursor: auto;
-
-	// 	& > div {
-	// 		// grid-auto-rows: 1fr 1fr;
-	// 		display: block;
-	// 	}
-	// }
-    
+@include media("screen", "<desktop") {
     .horizontal-slider.full-width {
         width: auto;
-        padding-top: 0;
+        padding: 0 1rem;
         overflow: hidden;
 		// margin: 0; //overritten by other margin classes
 		grid-template-rows: 1fr;
-		cursor: auto;
         overflow: visible;
     
         & > div{
@@ -80,6 +42,7 @@
             grid-auto-flow: row;
             grid-auto-columns: 1fr;
             grid-gap: 4rem;
+            justify-items: center;
 
             & > a:first-child {
                 margin-left: 0;
@@ -91,3 +54,53 @@
         }
     }
 }
+
+@include media("screen", ">desktop") {
+    .horizontal-slider {
+        // Chi siamo
+        [class^="wp-block-lazyblock"]:first-child {
+            margin-left: calc( ((100vw - 73rem ) / 2) - 3rem);
+        }
+        
+        // Portfolio
+        .card-link:first-child{
+            margin-left: calc( ((100vw - 73rem ) / 2) - 2rem);
+        }
+        
+        // Certificati
+        .card-certificate:first-child {
+            margin-left: calc( ((100vw - 73rem ) / 2) - 1rem);
+        }
+        
+        .arrow {
+            display: inline-block;
+            position: sticky;
+            bottom: 50%;
+            padding: 1.5rem;
+            width: 5rem;
+            height: 5rem;
+            font-size: 1.625rem;
+            line-height: 0.95;
+            color: $color__primary-700;
+            background-color: white;
+            border: solid 2px $color__neutral-400;
+            border-radius: 50%;
+            box-shadow: 0 7px 15px rgba($color__neutral-100, .15);
+            opacity: .9;
+            cursor: pointer;
+            
+            &--right {
+                left: 92%;
+            }
+            &--left {
+                left: 2%;
+                visibility: hidden;
+            }
+            
+            &:hover{
+                border-color: $color__primary-600;
+            }
+        }
+    }
+}
+    

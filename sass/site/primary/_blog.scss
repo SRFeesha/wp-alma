@@ -146,10 +146,6 @@
 }
 
 @include media("screen", "<phone") {
-    .blog-catalog {
-        display: block;
-    }
-
     .single-post {
         .site-content {
             display: block;
@@ -174,6 +170,7 @@
         grid-template-columns: 100%;
         grid-auto-flow: row;
         row-gap: map-get($map: $spacing, $key: 7 );
+        grid-template-columns: 1fr;
     }
 
     .share-button-wrapper {
@@ -203,6 +200,10 @@
 }
 
 @include media("screen", "<desktop") {
+    .blog-catalog {
+        display: block;
+    }
+    
     .content-space.single-post {
         padding: 0 1.5rem;
     }

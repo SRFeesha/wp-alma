@@ -93,14 +93,8 @@
         // grid-auto-flow: row;
         grid-template-areas: "intro" "immagine" "info";
 
-        h2,
-        h3,
-        h4 {
-            color: $color__primary-900;
-        }
-
-        .intro h2+div p {
-            color: $color__primary-900;
+        .intro h2+div p{
+            color: $color__primary-800;
         }
     }
 
@@ -115,14 +109,6 @@
         }
     }
 
-    .sm-h4 {
-        text-transform: uppercase;
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 24px;
-        color: $color__neutral-700
-    }
-
     .single-case_study {
         // Technical debt: I have to write it again cause I'm in .single-case_study and I've got other overrides on margin 😅
         @for $i from 0 through 15 {
@@ -135,6 +121,19 @@
         .tools p {
             @include margin-top(0);
         }
+
+        .sm-h4 {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 24px;
+            color: $color__neutral-700
+        }
+
+        .wp-block-columns {
+            margin-bottom: 0;
+            padding-left: 1rem;
+        }   
     }
 }
 
@@ -146,6 +145,10 @@
         grid-template-rows: 1fr min-content;
         column-gap: 1rem;
         row-gap: map-get($spacing, 8);
+
+        h2, h3, h4 {
+            color: $color__primary-800;
+        }
     
         .intro {
             grid-row: 1 / 2;

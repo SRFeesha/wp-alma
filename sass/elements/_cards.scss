@@ -6,36 +6,23 @@
 .card {
     display: grid;
     padding-left: map-get($map: $spacing, $key: 6);
-    border: 2px solid $color__primary-700;
+    border: 2px solid $color__neutral-100;
     border-radius: 4px;
     background-color: white;
     overflow: hidden;
     transition: all 300ms;
 }
 
+.card-link .card{
+    border-color: $color__primary-700;
 
-@include media("screen", ">tablet") {
-    .card {
-        border-color: $color__neutral-100;
-    }
-
-    .card-link:hover .card{
-        border-color: $color__primary-700;
-        transform: translateY(-8px);
-
-        h2,
-        h3 {
-            color: $color__primary-700;
-        }
+    h2,
+    h3 {
+        color: $color__primary-700;
     }
 }
 
-
-// card img??
-
-// ********
 // TEAM MEMBER
-// ********
 .card-team-member {
     width: 664px;
     height: 100%;
@@ -63,9 +50,7 @@
 
 }
 
-// ********
 // PORTFOLIO
-// ********
 .card-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(13rem, 29rem));
@@ -97,12 +82,7 @@
     }
 }
 
-
-// ********
-// COSA FACCIAMO
-// ********
-
-// certificate
+// CERTIFICATI
 .card-certificate {
     width: 384px;
     height: 256px;;
@@ -121,13 +101,7 @@
     }
 }
 
-
-// ********
 // BLOG
-// ********
-
-
-
 .card-blog-post {
     grid-template-rows: 17rem 2.5rem 6.5rem;
     grid-template-columns: 100%;
@@ -145,7 +119,7 @@
         margin: 0;
     }
 
-    &.card > h3 {
+    &.card h3 {
         padding: .5rem 1rem 0;
         color: $color__neutral-700;
         position: relative;
@@ -258,7 +232,6 @@
 
         &.card > h3 {
             @include font-size(1.5);
-            color: $color__primary-700;
             font-weight: 600;
             line-height: 1.3333;
         }
@@ -293,9 +266,25 @@
                 @include margin-top(4);
             }
 
-            > h3 {
+            > h3.entry-title {
                 margin: 0;
             }
+        }
+    }
+}
+
+@include media("screen", ">desktop"){
+    .card-link .card {
+        border-color: $color__neutral-100;
+    }
+
+    .card-link:hover .card{
+        border-color: $color__primary-700;
+        transform: translateY(-8px);
+
+        h2,
+        h3 {
+            color: $color__primary-700;
         }
     }
 }

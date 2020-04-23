@@ -163,3 +163,18 @@
 	}
 }
 
+#cta-finale {
+    position: relative;
+}
+
+@include media ("screen", "<phone") {
+	#headline div {
+		h1 {
+			@include font-size(2);
+		}
+		h3 {
+			@include font-size(1.15);
+			margin-top: 1rem;
+		}
+	}
+}

@@ -14,9 +14,9 @@
 		<?php
 		if ( 'post' === get_post_type() ) :
 			?>
-			<div class="entry-meta margin-top-8">
+			<div class="entry-meta about-article margin-top-8 sm--margin-top-3">
 				<?php
-				alma_wp_get_post_category();
+				alma_wp_get_post_category_w_link();
 				alma_wp_posted_on();
 				?>
 			</div><!-- .entry-meta -->

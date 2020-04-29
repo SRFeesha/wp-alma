@@ -129,6 +129,8 @@ function alma_wp_scripts() {
 	wp_enqueue_script( 'alma-wp-gsap', get_template_directory_uri() . '/inc/gsap/gsap.min.js', array(), '20151215', true );
 		
 	wp_enqueue_script( 'alma-wp-horizontal-slider', get_template_directory_uri() . '/js/horizontal-slider.js', array(), '20151215', true );
+	
+	wp_enqueue_script( 'alma-wp-animation-home', get_template_directory_uri() . '/js/animation-home.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'alma-wp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -523,6 +525,19 @@ function alma_wp_get_post_category() {
 	if ( $category ) {
 		/* translators: 1: list of categories. */
 		printf( '<span class="cat-links has-gray-500-color">' . esc_html__( '%1$s', 'alma-wp' ) . '</span>', $category ); // WPCS: XSS OK.
+	}
+}
+
+function alma_wp_get_post_category_w_link() {
+	/* translators: used between list items, there is a space after the comma */
+	// $categories_list = get_the_category_list( esc_html__( ', ', 'alma-wp' ) );
+	$category = get_the_category()[0];
+	$categoryLink = get_category_link( $category->term_id );
+	// echo ($categories_list[0]->name);
+
+	if ( $category ) {
+		/* translators: 1: list of categories. */
+		printf( '<span class="cat-links has-gray-500-color"><a href="' . esc_html__( '%1$s', 'alma-wp') . '">' . esc_html__( '%2$s', 'alma-wp' ) . '</a></span>', $categoryLink, $category->name ); // WPCS: XSS OK.
 	}
 }
 

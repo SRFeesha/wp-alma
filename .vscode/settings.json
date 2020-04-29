@@ -1,7 +1,7 @@
 {
     "files.exclude": {
-        "._**": true,
-        "**/._**": true,
+        // "._**": true,
+        // "**/._**": true,
         "node_modules": true
     },
     "liveServer.settings.multiRootWorkspaceName": "alma-wp",

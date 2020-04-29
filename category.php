@@ -17,7 +17,7 @@ get_header(); ?>
 <div class="blog-catalog">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main"> <?php
-			$cat = get_the_category()[0]->name;
+			$cat = get_the_category()[0]->slug;
 			$args = array(
 					'category_name' => $cat,
 					'paged' => $paged

@@ -25,7 +25,7 @@ get_header();
 			// the_post_navigation();
 			the_post_navigation( array(
 				'prev_text'                  => __( '← Caso studio precedente: <em> %title </em>' ),
-				'next_text'                  => __( 'Caso studio successivo: %title →' ),
+				'next_text'                  => __( 'Caso studio successivo: <em> %title </em> →' ),
 				// 'in_same_term'               => true,
 				// 'taxonomy'                   => __( 'post_tag' ),
 				'screen_reader_text' => __( 'Continue Reading' ),

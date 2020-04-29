@@ -34,7 +34,7 @@
                                 <p class="card-over-title caption">
                                     <?php echo get_post_custom_values('settore')[0] ?> 
                                 </p>    
-                                <h2 class="card-title">
+                                <h2 class="card-title margin-top-1">
                                     <?php the_title() ?>
                                 </h2>
                                 <?php 

@@ -55,12 +55,13 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(13rem, 29rem));
     grid-gap: 6rem 7rem;
+    // grid-template-rows: 1fr;
 }
 
 .card-portfolio {
     padding-left: 0;
     width: 29rem;
-    height: 26.5rem;
+    min-height: 26.5rem;
 }
 
 .card-featured-img {
@@ -124,7 +125,7 @@
         color: $color__neutral-700;
         position: relative;
         overflow: hidden;
-        margin: 0;
+        // margin: 0; // no effect — am I missing something in the cascade? Fixed adding a more specific rule down
 
         // Overflow
         &:after{
@@ -176,7 +177,11 @@
             }
         }
     }
-}
+}	
+
+.single-post .card.card-blog-post h3 {
+    margin: 0;
+}	
 
 // Related posts 
 .related-posts {

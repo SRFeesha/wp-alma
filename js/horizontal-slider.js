@@ -8,8 +8,7 @@
 	let hs = 				document.querySelectorAll(".horizontal-slider")[0],
 		totalWidth = 		hs.scrollWidth,
 	 	clientWidth = 		hs.clientWidth,
-		distance = 			665, // !!! 400px is almost a card: 464 for portfolio and 664 for team but 384 for certificate  — d'oh!!
-	 	actualPosition =	clientWidth + hs.scrollLeft,
+		distance = 			800,
 		leftMargin =		((clientWidth - 1168) / 2) - 32,
 		rightArrow = 		document.createElement("div"),
 		leftArrow = 		document.createElement("div"),

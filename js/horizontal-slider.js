@@ -6,12 +6,12 @@
 
 ( function() {
 	let hs = 				document.querySelectorAll(".horizontal-slider")[0],
+		rightArrow = 		document.createElement("div"),
+		leftArrow = 		document.createElement("div"),
 		totalWidth = 		hs.scrollWidth,
 	 	clientWidth = 		hs.clientWidth,
 		distance = 			800,
 		leftMargin =		((clientWidth - 1168) / 2) - 32,
-		rightArrow = 		document.createElement("div"),
-		leftArrow = 		document.createElement("div"),
 		scrolledPx = 		hs.scrollLeft,
 		hsNotVisible = 		totalWidth - clientWidth,
 		scrolledPercent = 	(scrolledPx / hsNotVisible) * 100,
@@ -26,7 +26,6 @@
 		scrolledPx = hs.scrollLeft;
 		hsNotVisible = totalWidth - clientWidth;
 		scrolledPercent = (scrolledPx / hsNotVisible) * 100;
-		console.log(scrolledPx);
 
 		// enhance smoothness: the arrow disappear a little bit befor the end of the div
 		(scrolledPx >= hsNotVisible-16) ? show(rightArrow, true) : show(rightArrow, false); 

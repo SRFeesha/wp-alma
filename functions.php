@@ -126,9 +126,18 @@ function alma_wp_scripts() {
 
 	wp_enqueue_script( 'alma-wp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	
-	wp_enqueue_script( 'alma-wp-gsap', get_template_directory_uri() . '/inc/gsap/gsap.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'alma-wp-gsap', get_template_directory_uri() . '/inc/animation/gsap.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'alma-wp-gsap-css-rule', get_template_directory_uri() . '/inc/animation/CSSRulePlugin.min.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'alma-wp-scroll-magic', get_template_directory_uri() . '/inc/animation/ScrollMagic.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'alma-wp-scroll-magic-debug', get_template_directory_uri() . '/inc/animation/debug.addIndicators.min.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'alma-wp-gsap-sm', get_template_directory_uri() . '/inc/animation/animation.gsap.min.js', array(), '20151215', true );
 		
-	wp_enqueue_script( 'alma-wp-horizontal-slider', get_template_directory_uri() . '/js/horizontal-slider.js', array(), '20151215', true );
+	// load the horizontal-slider only when needed
+	if( is_page( array ( 'home', 'homepage', 'chi-siamo', 'who-we-are', 'cosa-facciamo', 'what-we-do' ) )){
+		wp_enqueue_script( 'alma-wp-horizontal-slider', get_template_directory_uri() . '/js/horizontal-slider.js', array(), '20151215', true );
+	}
 	
 	wp_enqueue_script( 'alma-wp-animation-home', get_template_directory_uri() . '/js/animation-home.js', array(), '20151215', true );
 
@@ -560,6 +569,7 @@ function alma_wp_get_related_posts( $post_id, $related_count, $args = array() ) 
 	$post       = get_post( $post_id );
 	$taxonomies = get_object_taxonomies( $post, 'names' );
 
+	
 	foreach ( $taxonomies as $taxonomy ) {
 		$terms = get_the_terms( $post_id, $taxonomy );
 		if ( empty( $terms ) ) {
@@ -571,6 +581,7 @@ function alma_wp_get_related_posts( $post_id, $related_count, $args = array() ) 
 			'field'    => 'slug',
 			'terms'    => $term_list
 		);
+		var_dump($terms[0]->slug);
 	}
 
 	if ( count( $related_args['tax_query'] ) > 1 ) {

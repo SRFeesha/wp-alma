@@ -394,6 +394,7 @@ select,
 optgroup,
 textarea {
   color: #404040;
+  color: #102A43;
   font-family: "Fira Sans", sans-serif;
   font-size: 16px;
   font-size: 1rem;
@@ -493,6 +494,9 @@ h4 {
   }
   h4 {
     line-height: 1.428571;
+  }
+  .sm--h2 {
+    font-size: 24px;
   }
 }
 
@@ -833,7 +837,7 @@ table {
   width: 100%;
 }
 
-.decoration {
+svg.decoration {
   display: none;
 }
 
@@ -846,7 +850,7 @@ table {
     background-image: url("data:image/svg+xml,%3Csvg width='171' height='93' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M64.5 100.5v-63l-57-30m0 0l-57 30m57-30v-33m0 123v-60l57-30m0 0l57 30 57-30m-114 0v-24m-84 69l57 30 57-30m0 0l57 30v30m-57-60v-63m57 0v63m0 0l-57 30v30m57-60l57 30' stroke='%23F0F4F8' stroke-width='3'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Cpath d='M0 0h171v93H0V0z' fill='%23fff'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
     padding: 3rem 0 4rem 0;
   }
-  .decoration {
+  svg.decoration {
     display: inline;
     position: absolute;
     z-index: -1;
@@ -862,20 +866,26 @@ table {
     stroke-dashoffset: 4950;
   }
   #kandiskij {
-    top: 250px;
+    top: 150px;
     right: 192px;
     width: 283px;
-    opacity: 0.7;
+    opacity: 0.5;
   }
   #trippy-line-cta {
     top: 100px;
     left: 580px;
+    width: 1335px;
     -webkit-transform: rotate(-5deg);
             transform: rotate(-5deg);
+    stroke-dasharray: 4400;
+    stroke-dashoffset: 4400;
   }
   #layers {
     top: 12.9rem;
     left: 6rem;
+  }
+  html:lang(en) #layers {
+    top: 15.4rem;
   }
   #blob {
     width: 310px;
@@ -917,18 +927,6 @@ table {
   }
 }
 
-@-webkit-keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
 .card-link {
   text-decoration: none;
   height: 100%;
@@ -944,6 +942,8 @@ table {
   overflow: hidden;
   -webkit-transition: all 300ms;
   transition: all 300ms;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .card-link .card {
@@ -1357,172 +1357,103 @@ table {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-button,
+div.wpforms-container-full .wpforms-form button[type="submit"],
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
-  background: #e6e6e6;
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 1;
-  padding: .6em 1em .4em;
-}
-
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-  border-color: #ccc #bbb #aaa;
-}
-
-button:active, button:focus,
-input[type="button"]:active,
-input[type="button"]:focus,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:focus {
-  border-color: #aaa #bbb #bbb;
-}
-
-.primary-button > a {
-  background-color: #0F609B;
-  color: white;
-  font-weight: 600;
-  font-size: 24px;
-  font-size: 1.5rem;
-  line-height: 1.5;
-  padding: 12px 36px;
-  border-radius: 4px;
-}
-
-.primary-button > a:hover {
-  background-color: #003E6B;
-}
-
-.secondary-button {
-  background-color: white;
-  color: #0F609B;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1rem;
-  padding: 12px 16px;
-  border: solid 2px #F0F4F8;
-  border-radius: 4px;
-  -webkit-transition: all 300ms;
-  transition: all 300ms;
-}
-
-.secondary-button:hover {
-  border-color: #0F609B;
-}
-
-div.wpforms-container-full .wpforms-form button[type="submit"] {
-  background-color: #0F609B;
-  padding: 12px 36px;
-  font-size: 24px;
-  line-height: 1.5;
-  color: white;
-  border-radius: 4px;
-}
-
-div.wpforms-container-full .wpforms-form button[type="submit"]:hover {
-  background-color: #003E6B;
-}
-
-.btn {
   font-weight: 400;
   position: relative;
   text-decoration: none;
+  font-size: 24px;
   font-size: 1.5rem;
   letter-spacing: 0.03375rem;
   line-height: 1.5;
   padding: 0.75rem 2.25rem;
   border-radius: 0.25rem;
-  -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.btn:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 0.25rem;
-  opacity: 0;
-  z-index: -1;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.btn:hover {
-  -webkit-transform: scale(1.1, 1.1);
-          transform: scale(1.1, 1.1);
-}
-
-.btn:hover:after {
-  opacity: 1;
-}
-
-.btn--primary {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: none;
   background-color: #0F609B;
-  color: white;
+  color: #fff;
 }
 
-.btn--primary:after {
-  -webkit-box-shadow: 0 15px 35px 0 rgba(0, 62, 107, 0.2), 0 10px 25px 0 rgba(0, 62, 107, 0.1);
-          box-shadow: 0 15px 35px 0 rgba(0, 62, 107, 0.2), 0 10px 25px 0 rgba(0, 62, 107, 0.1);
+div.wpforms-container-full .wpforms-form button[type="submit"]:hover, div.wpforms-container-full .wpforms-form button[type="submit"]:focus,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  background-color: #186FAF;
+  border: 0;
 }
 
-.btn--secondary {
-  background-color: white;
-  color: #0F609B;
-  border: solid 2px #0F609B;
+div.wpforms-container-full .wpforms-form button[type="submit"]:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+  background-color: #0A558C;
+  border: 0;
 }
 
-.btn--secondary:after {
-  -webkit-box-shadow: 0 15px 35px 0 rgba(0, 62, 107, 0.2), 0 10px 25px 0 rgba(0, 62, 107, 0.1);
-          box-shadow: 0 15px 35px 0 rgba(0, 62, 107, 0.2), 0 10px 25px 0 rgba(0, 62, 107, 0.1);
-}
-
-.btn--secondary svg g {
-  stroke: #0F609B;
-}
-
-.btn .link--arrowed {
-  display: inline-block;
-}
-
-.btn .link--arrowed .arrow-icon {
+.btn > a,
+.wp-block-button > a {
+  font-weight: 400;
   position: relative;
-  top: -1px;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
-  vertical-align: middle;
+  text-decoration: none;
+  font-size: 24px;
+  font-size: 1.5rem;
+  letter-spacing: 0.03375rem;
+  line-height: 1.5;
+  padding: 0.75rem 2.25rem;
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background-color: #0F609B;
+  color: #fff;
 }
 
-.btn .link--arrowed .arrow-icon--circle {
-  -webkit-transition: stroke-dashoffset .3s ease;
-  transition: stroke-dashoffset .3s ease;
-  stroke-dasharray: 95;
-  stroke-dashoffset: 95;
+.btn > a:hover, .btn > a:focus,
+.wp-block-button > a:hover,
+.wp-block-button > a:focus {
+  background-color: #186FAF;
 }
 
-.btn .link--arrowed:hover .arrow-icon {
-  -webkit-transform: translate3d(5px, 0, 0);
-          transform: translate3d(5px, 0, 0);
+.btn > a:active,
+.wp-block-button > a:active {
+  background-color: #0A558C;
 }
 
-.btn .link--arrowed:hover .arrow-icon--circle {
-  stroke-dashoffset: 0;
+.btn.btn--secondary > a, .btn.is-style-outline > a,
+.wp-block-button.btn--secondary > a,
+.wp-block-button.is-style-outline > a {
+  padding: 0.5rem 1.5rem;
+  background-color: #F0F4F8;
+  color: #0F609B;
+  border-radius: 0.25rem;
+  border: none;
+  font-size: 17.6px;
+  font-size: 1.1rem;
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn.btn--secondary > a:hover, .btn.btn--secondary > a:focus, .btn.is-style-outline > a:hover, .btn.is-style-outline > a:focus,
+.wp-block-button.btn--secondary > a:hover,
+.wp-block-button.btn--secondary > a:focus,
+.wp-block-button.is-style-outline > a:hover,
+.wp-block-button.is-style-outline > a:focus {
+  background-color: #fff;
+}
+
+.btn.btn--secondary > a:active, .btn.is-style-outline > a:active,
+.wp-block-button.btn--secondary > a:active,
+.wp-block-button.is-style-outline > a:active {
+  background-color: #D9E2EC;
 }
 
 @media only screen and (max-width: 480px) {
@@ -1784,7 +1715,7 @@ form {
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
-a[href*="//"]:not([href*="192.168.64.2/"]):after {
+a[href*="//"]:not([href*="almadigital.it"]):after {
   content: " ";
   margin: 0 0 -2px 4px;
   display: inline-block;
@@ -1885,7 +1816,7 @@ body.lock-scroll {
   width: auto;
 }
 
-.menu-header-container ul {
+.menu-header-container .nav-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1897,23 +1828,56 @@ body.lock-scroll {
   padding: 0;
 }
 
-.menu-header-container ul li {
+.menu-header-container .nav-menu .menu-item {
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   margin: auto 0 auto 3rem;
+  position: relative;
 }
 
-.menu-header-container ul li.current-menu-item > a {
+.menu-header-container .nav-menu .menu-item a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #0F609B;
+  -webkit-transition: width 0.2s;
+  transition: width 0.2s;
+}
+
+.menu-header-container .nav-menu .menu-item a:hover:after {
+  width: 100%;
+}
+
+.menu-header-container .nav-menu .menu-item.current-menu-item > a {
   font-weight: 600;
 }
 
-.menu-header-container ul li:first-child {
+.menu-header-container .nav-menu .menu-item:first-child {
   margin-left: 100px;
 }
 
-.menu-header-container ul li:last-child {
+.menu-header-container .nav-menu .menu-item:last-child {
   margin-left: auto;
+}
+
+.menu-header-container .nav-menu .menu-item:last-child a {
+  padding: 0.75rem 1rem;
+  border: solid 2px #F0F4F8;
+  border-radius: 0.25rem;
+  -webkit-transition: border-color .2s ease-in-out;
+  transition: border-color .2s ease-in-out;
+}
+
+.menu-header-container .nav-menu .menu-item:last-child a:after {
+  display: none;
+}
+
+.menu-header-container .nav-menu .menu-item:last-child a:hover {
+  border-color: #186FAF;
 }
 
 /* Small menu. */
@@ -1960,10 +1924,10 @@ body.lock-scroll {
   .main-navigation.toggled button .hamburger-line {
     fill: #F0F4F8;
   }
-  .main-navigation.toggled ul {
+  .main-navigation.toggled .nav-menu {
     display: block;
   }
-  .menu-header-container ul {
+  .menu-header-container .nav-menu {
     display: none;
     position: absolute;
     left: 0;
@@ -1975,27 +1939,27 @@ body.lock-scroll {
     width: 100vw;
     overflow: hidden;
   }
-  .menu-header-container ul .menu-item {
+  .menu-header-container .nav-menu .menu-item {
     margin: 0 0 1.5rem 6rem;
   }
-  .menu-header-container ul .menu-item:first-child {
+  .menu-header-container .nav-menu .menu-item:first-child {
     margin-left: 6rem;
     padding-top: 6rem;
   }
-  .menu-header-container ul .menu-item:last-child {
-    width: -webkit-min-content;
-    width: -moz-min-content;
-    width: min-content;
+  .menu-header-container .nav-menu .menu-item:last-child {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
     padding: 0 8px;
     margin: 3rem 6rem 4rem;
+  }
+  .menu-header-container .nav-menu .menu-item:last-child a {
+    display: inline-block;
+    padding: 12px 24px;
     background-color: #102A43;
     border: solid 2px #334E68;
   }
-  .menu-header-container ul .menu-item:last-child a {
-    display: inline-block;
-    padding: 12px 24px;
-  }
-  .menu-header-container ul .menu-item a {
+  .menu-header-container .nav-menu .menu-item a {
     display: block;
     margin: 0 0 36px 0;
     padding: 12px 0;
@@ -2003,10 +1967,10 @@ body.lock-scroll {
     line-height: 24px;
     color: #F0F4F8;
   }
-  .menu-header-container ul .menu-item a:first-child {
+  .menu-header-container .nav-menu .menu-item a:first-child {
     margin: 0;
   }
-  .menu-header-container ul .menu-item a:visited, .menu-header-container ul .menu-item a:hover, .menu-header-container ul .menu-item a:focus, .menu-header-container ul .menu-item a:active {
+  .menu-header-container .nav-menu .menu-item a:visited, .menu-header-container .nav-menu .menu-item a:hover, .menu-header-container .nav-menu .menu-item a:focus, .menu-header-container .nav-menu .menu-item a:active {
     color: #F0F4F8;
   }
 }
@@ -2126,11 +2090,13 @@ body.lock-scroll {
 }
 
 ::-moz-selection {
-  background: #DCEEFB;
+  background: #0F609B;
+  color: #F0F4F8;
 }
 
 ::selection {
-  background: #DCEEFB;
+  background: #0F609B;
+  color: #F0F4F8;
 }
 
 /*--------------------------------------------------------------
@@ -2178,19 +2144,9 @@ body.lock-scroll {
   width: 100%;
 }
 
-.width-50 {
-  max-width: 50%;
-  width: 50%;
-}
-
-.width-37 {
-  width: 37%;
-  max-width: 37%;
-}
-
-.width-42 {
-  width: 42%;
-  max-width: 42%;
+.width-88 {
+  width: 88%;
+  max-width: 88%;
 }
 
 .width-66 {
@@ -2198,9 +2154,19 @@ body.lock-scroll {
   max-width: 66%;
 }
 
-.width-18 {
-  width: 18%;
-  max-width: 18%;
+.width-50 {
+  max-width: 50%;
+  width: 50%;
+}
+
+.width-42 {
+  width: 42%;
+  max-width: 42%;
+}
+
+.width-37 {
+  width: 37%;
+  max-width: 37%;
 }
 
 .width-25 {
@@ -2208,9 +2174,9 @@ body.lock-scroll {
   max-width: 25%;
 }
 
-.width-88 {
-  width: 88%;
-  max-width: 88%;
+.width-18 {
+  width: 18%;
+  max-width: 18%;
 }
 
 @media only screen and (max-width: 480px) {
@@ -2553,6 +2519,10 @@ body.lock-scroll {
   position: relative;
 }
 
+#headline {
+  height: calc( 100vh - 80px - 13.5rem);
+}
+
 #headline div h1 {
   -ms-grid-column: 3;
       grid-column-start: 3;
@@ -2799,6 +2769,32 @@ body.lock-scroll {
 
 .position-relative {
   position: relative;
+}
+
+/*--------------------------------------------------------------
+# Animation
+--------------------------------------------------------------*/
+.home #headline h1,
+.home #headline h3,
+.home #headline .primary-button {
+  visibility: hidden;
+}
+
+.home #masthead,
+.home .site-branding,
+.home .nav-menu .menu-item {
+  visibility: hidden;
+}
+
+.service,
+#ellipses,
+.skewed-rect p {
+  visibility: hidden;
+}
+
+.approach .wp-block-column:nth-child(2) div,
+#layers line {
+  visibility: hidden;
 }
 
 /*--------------------------------------------------------------

@@ -1,4 +1,4 @@
-.decoration {
+svg.decoration {
     display: none;
 }
 
@@ -12,7 +12,7 @@
         padding: 3rem 0 4rem 0;
     }
     
-    .decoration {
+    svg.decoration {
         display: inline;
         position: absolute;
         z-index: -1;
@@ -29,24 +29,29 @@
         }
     }
 
-   
-
     #kandiskij {
-        top: 250px;
+        top: 150px;
         right: 192px;
         width: 283px;
-        opacity: 0.7;
+        opacity: 0.5;
     }
       
     #trippy-line-cta {	
         top: 100px;
         left: 580px;
+        width: 1335px;
         transform: rotate(-5deg);
+        stroke-dasharray: 4400;
+        stroke-dashoffset: 4400;
     }
 
     #layers {
         top: 12.9rem;
         left: 6rem;
+
+        html:lang(en) &{
+            top: 15.4rem;
+        }
     }
 
     #blob {
@@ -87,11 +92,5 @@
             background-color: $color__neutral-050;
             z-index: -1;
         }
-    }
-}
-
-@keyframes dash {
-    to {
-      stroke-dashoffset: 0;
     }
 }

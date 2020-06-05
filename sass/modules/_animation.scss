@@ -1,0 +1,30 @@
+// Prevent FOUC with GSAP
+
+// HOME
+.home {
+  #headline {
+    h1,
+    h3,
+    .primary-button {
+      visibility: hidden;
+    }
+  }
+  #masthead,
+  .site-branding,
+  .nav-menu .menu-item {
+    visibility: hidden;
+  }
+}
+
+// COSA FACCIAMO
+.service,
+#ellipses,
+.skewed-rect p {
+  visibility: hidden;
+}
+
+//CHI SIAMO
+.approach .wp-block-column:nth-child(2) div,
+#layers line{
+  visibility: hidden
+}

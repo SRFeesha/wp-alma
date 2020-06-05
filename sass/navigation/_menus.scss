@@ -1,187 +1,211 @@
-// HEADER
-
 body.lock-scroll {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .container-header {
-	position: sticky;
-	top: 0;
-	z-index: 99;
-	background-color: white;
-	height: 80px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background-color: white;
+  height: 80px;
 
-	* {
-		height: inherit;
-	}
+  * {
+    height: inherit;
+  }
 }
 
 .site-header {
-	display: grid;
-	grid-template-columns: repeat(12, 1fr);
-	// max-height: 80px;
-	a {
-		background: none;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  a {
+    background: none;
 
-		&:visited {
-			color: $color__primary-700;
-		}
-	}
+    &:visited {
+      color: $color__primary-700;
+    }
+  }
 }
 
 .site-branding {
-	grid-column-start: 1;
-	grid-column-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
 
-	.custom-logo {
-		width: auto;
-	}
+  .custom-logo {
+    width: auto;
+  }
 }
 
-.menu-header-container	{
-	ul {
-		display: flex;
-		align-items: center;
-		list-style: none;
-		margin: 0;
-		padding: 0;
+.menu-header-container {
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-		li {
-			height: min-content;
-			margin: auto 0 auto map-get($spacing, 6);
-			
-			&.current-menu-item > a {
-				font-weight: 600;
-			}
+    .menu-item {
+      height: min-content;
+      margin: auto 0 auto map-get($spacing, 6);
+      position: relative;
 
-			&:first-child{
-				margin-left: 100px;
-			}
-
-			&:last-child{
-				margin-left: auto;
-			}
+	  a {
+		&:after {
+		  content: "";
+		  position: absolute;
+		  left: 0;
+		  bottom: 0;
+		  width: 0;
+		  height: 2px;
+		  background-color: $color__primary-700;
+		  transition: width 0.2s;
 		}
-	}
+
+		&:hover:after {
+		  width: 100%;
+		}
+	  }
+
+      &.current-menu-item > a {
+        font-weight: 600;
+      }
+
+      &:first-child {
+        margin-left: 100px;
+      }
+
+      &:last-child {
+        margin-left: auto;
+        a {
+          padding: 0.75rem 1rem;
+          border: solid 2px $color__neutral-050;
+		  border-radius: 0.25rem;
+		  transition: border-color .2s ease-in-out;
+		  
+		  &:after{
+			  display: none;
+		  }
+
+		  &:hover{
+			  border-color: $color__primary-600;
+		  }
+        }
+      }
+
+    }
+  }
 }
 
 /* Small menu. */
 .menu-toggle {
-	display: none;
+  display: none;
 }
 
-
-
-
-
-
-
-
 @include media("<phone") {
-	.container-header {
-		height: 56px;
-		border-bottom: solid 1px $color__neutral-050;
-	}
+  .container-header {
+    height: 56px;
+    border-bottom: solid 1px $color__neutral-050;
+  }
 
-	.site-header {
-		grid-template-columns: 1fr 1fr;
-	}
+  .site-header {
+    grid-template-columns: 1fr 1fr;
+  }
 
-	.site-branding {
-		grid-column-end: 2;
-		z-index: 100;
-	}
+  .site-branding {
+    grid-column-end: 2;
+    z-index: 100;
+  }
 
-	.main-navigation {
-		display: grid;
-		justify-content: end;
-		grid-column-end: 3;
+  .main-navigation {
+    display: grid;
+    justify-content: end;
+    grid-column-end: 3;
 
-		button {
-			background-color: transparent;
-			border: none;
-			display: inline-block;
-			
-			svg {
-				height: auto;
-			}
+    button {
+      background-color: transparent;
+      border: none;
+      display: inline-block;
 
-			.hamburger-line {
-				height: 2px;
-			}
-		}
-	}
+      svg {
+        height: auto;
+      }
 
-	.main-navigation.toggled {
-		button {
-			border-radius: 0;
-			z-index: 100;
-			
-			.hamburger-line {
-				fill: $color__neutral-050;
-			}
-		}
-		
-		ul {
-			display: block;
-			// transform: translateX(0);
-		}
-	}
+      .hamburger-line {
+        height: 2px;
+      }
+    }
+  }
 
-	.menu-header-container ul {
-		display: none;
-		position: absolute;
-		left: 0;
-		top: 0;
-		transform: translateX(100vw);
-		background-color: $color__neutral-900;
-		height: 100vh;
-		width: 100vw;
-		overflow: hidden;
-		// transition: all 400ms;
+  .main-navigation.toggled {
+    button {
+      border-radius: 0;
+      z-index: 100;
 
-		.menu-item {
-			// transform: translateX(100px);
-			margin: 0 0 map-get($spacing, 4 ) map-get($spacing, 8 );
-			
-			&:first-child {
-				margin-left: map-get($spacing, 8 );
-				padding-top: map-get($spacing, 8 );
-			}
+      .hamburger-line {
+        fill: $color__neutral-050;
+      }
+    }
 
-			&:last-child { 
-				width: min-content;
-				padding: 0 8px;
-				margin: map-get($spacing, 6 ) map-get($spacing, 8 ) map-get($spacing, 7 );
-				background-color: $color__neutral-900;
-				border: solid 2px $color__neutral-700;
-				
-				a {
-					display: inline-block;
-					padding: 12px 24px;
-				}
-			}
-			
-			a {
-				display: block;
-				margin: 0 0 36px 0;
-				padding: 12px 0;
-				font-size: 20px;
-				line-height: 24px;
-				color: $color__neutral-050;
-				// font-weight: 600;
-				
-				&:first-child {
-					margin: 0;
-				}
-				
-				&:visited, 
-				&:hover, 
-				&:focus, 
-				&:active{
-					color: $color__neutral-050;
-				} 
-			}
-		}
-	}
+    .nav-menu {
+      display: block;
+      // transform: translateX(0);
+    }
+  }
+
+  .menu-header-container .nav-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(100vw);
+    background-color: $color__neutral-900;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    // transition: all 400ms;
+
+    .menu-item {
+      // transform: translateX(100px);
+      margin: 0 0 map-get($spacing, 4) map-get($spacing, 8);
+
+      &:first-child {
+        margin-left: map-get($spacing, 8);
+        padding-top: map-get($spacing, 8);
+      }
+
+      &:last-child {
+        // width: min-content;
+        width: max-content;
+        padding: 0 8px;
+        margin: map-get($spacing, 6) map-get($spacing, 8) map-get($spacing, 7);
+
+        a {
+          display: inline-block;
+          padding: 12px 24px;
+          background-color: $color__neutral-900;
+          border: solid 2px $color__neutral-700;
+        }
+      }
+
+      a {
+        display: block;
+        margin: 0 0 36px 0;
+        padding: 12px 0;
+        font-size: 20px;
+        line-height: 24px;
+        color: $color__neutral-050;
+        // font-weight: 600;
+
+        &:first-child {
+          margin: 0;
+        }
+
+        &:visited,
+        &:hover,
+        &:focus,
+        &:active {
+          color: $color__neutral-050;
+        }
+      }
+    }
+  }
 }
